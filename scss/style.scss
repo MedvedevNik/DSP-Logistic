@@ -77,7 +77,7 @@ a {
     display: inline-block;
   }
   &__list li+li {
-    padding-left: 50px;
+    padding-left: 30px;
   }
   &__list-link {
     font-weight: 600;
@@ -85,6 +85,12 @@ a {
   }
   &__list-link:hover {
     color: $accent;
+  }
+  &__list-link:active {
+    color: #fff;
+    padding: 16px 25px ;
+    background-color: $accent;
+    border-radius: 4px;
   }
 }
 
@@ -127,8 +133,7 @@ a {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  height: 100vh;
-  // min-height: 900px;
+  min-height: 900px;
   &__inner {
     padding-top: 310px;
     text-align: left;
@@ -164,6 +169,12 @@ a {
     font-size: 16px;
     line-height: 20px;
     letter-spacing: 0.01em;
+    z-index: 5;
+  }
+  &__btn:hover {
+    background-color: #69A4A2;
+    color: #fff;
+    border: 2px solid #69A4A2;
   }
   &__btn-primary {
     background: #FFFFFF;
@@ -179,9 +190,80 @@ a {
   }
 }
 
+.about {
+  padding-top: 300px;
+  margin-bottom: 150px;
+  &__inner {
+    position: relative;
+  }
+  &__top {
+    max-width: 405px;
+    margin-bottom: 321px;
+  }
+  &__text {
+    padding-top: 82px;
+  }
+  &__text-title {
+    position: relative;
+
+    font-style: normal;
+    font-weight: 800;
+    font-size: 60px;
+    line-height: 73px;
+    letter-spacing: 0.01em;
+    color: $text-color;
+    margin-bottom: 58px;
+  }
+  &__text-title::after {
+    position: absolute;
+    content: '';
+    width: 108px;
+    height: 5px;
+    left: 5px;
+    top: 96px;
+    background: #69A4A2;
+  }
+  &__top-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+  }
+  &__central {
+    max-width: 385px;
+    margin-right: 237px;
+    margin-left: auto;
+    margin-bottom: 378px;
+  }
+  &__title {
+    font-weight: 800;
+    padding-bottom: 20px;
+  }
+  &__central-img {
+    position: absolute;
+    top: 480px;
+    left: 0;
+    z-index: 3;
+  }
+  &__bottom {
+    max-width: 420px;
+    padding-bottom: 150px;
+  }
+  &__bottom-img {
+    position: absolute;
+    top: 1070px;
+    right: 128px;
+    z-index: 4;
+  }
+  &__bottom-description {
+    margin-bottom: 35px;
+  }
+}
+
 .sticky {
   position: fixed;
   top: 0;
-  width: 100%
+  width: 100%;
+  z-index: 10;
 }
 
