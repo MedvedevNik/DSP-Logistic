@@ -1,14 +1,21 @@
-// 'use strict';
+'use strict';
 
-// const header = document.getElementById("header"),
-//       sticky = header.offsetTop;
 
-// function myFunction() {
-//   if (window.pageYOffset >= sticky) {
-//     header.classList.toggle("sticky");
-//   } else {
-//     header.classList.toggle("sticky");
-//   }
-// }
+const anchors = document.querySelectorAll('a[href*="#"]');
+  // ancLogo = anchors[0],
+  // ancAbout = anchors[1],
+  // ancSales = anchors[2];
 
-// window.onscroll = function() {myFunction()};
+
+for (let anchor of anchors) {
+  anchor.addEventListener('click', function(event) {
+    event.preventDefault();
+    
+    const blockID = anchor.getAttribute('href').substr(1);
+    
+    document.getElementById(blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  })
+}

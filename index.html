@@ -1,142 +1,405 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DSP Logistic</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-  <header class="header sticky" id="header">
-    <div class="container">
-      <div class="header__inner">
-        <a class="logo" href="#">
-          <img class="logo__link" src="img/logo.png" alt="logo: DSP Logistic">
-        </a>
-        <nav class="nav">
-          <ul class="nav__list">
-            <li class="nav__list-item">
-              <a class="nav__list-link" href="#">
-                О нас
-              </a>
-            </li>
-            <li class="nav__list-item">
-              <a class="nav__list-link" href="#">
-                Акции
-              </a>
-            </li>
-            <li class="nav__list-item">
-              <a class="nav__list-link" href="#">
-                Услуги
-              </a>
-            </li>
-            <li class="nav__list-item">
-              <a class="nav__list-link" href="#">
-                Калькулятор
-              </a>
-            </li>
-            <li class="nav__list-item">
-              <a class="nav__list-link" href="#">
-                Почему мы
-              </a>
-            </li>
-            <li class="nav__list-item">
-              <a class="nav__list-link" href="#">
-                Отзывы
-              </a>
-            </li>
-            <li class="nav__list-item">
-              <a class="nav__list-link" href="#">
-                Частые вопросы
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <div class="social">
-          <a class="social__links" href="#">
-            <img class="social__links-img" src="img/vk.svg" alt="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DSP Logistic</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header sticky" id="header">
+      <div class="container">
+        <div class="header__inner">
+          <a class="logo" href="#main">
+            <img
+              class="logo__link"
+              src="img/logo.png"
+              alt="logo: DSP Logistic"
+            />
           </a>
-          <a class="social__links" href="#">
-            <img class="social__links-img" src="img/ins.svg" alt="">
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__list-item">
+                <a class="nav__list-link" href="#about"> О нас </a>
+              </li>
+              <li class="nav__list-item">
+                <a class="nav__list-link" href="#stocks"> Акции </a>
+              </li>
+              <li class="nav__list-item">
+                <a class="nav__list-link" href="#services"> Услуги </a>
+              </li>
+              <!-- <li class="nav__list-item">
+                <a class="nav__list-link" href="#"> Калькулятор </a>
+              </li> -->
+              <li class="nav__list-item">
+                <a class="nav__list-link" href="#why"> Почему мы </a>
+              </li>
+              <li class="nav__list-item">
+                <a class="nav__list-link" href="#"> Отзывы </a>
+              </li>
+              <li class="nav__list-item">
+                <a class="nav__list-link" href="#"> Частые вопросы </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="social">
+            <a class="social__links" href="#">
+              <img class="social__links-img" src="img/vk.svg" alt="" />
+            </a>
+            <a class="social__links" href="#">
+              <img class="social__links-img" src="img/ins.svg" alt="" />
+            </a>
+          </div>
+          <a class="contact" href="tel:3052195">
+            <img class="contact__img" src="img/phone.png" alt="" />
+            <span class="contact__phone">305-21-95</span>
           </a>
         </div>
-        <a class="contact" href="tel:+79679761221">
-          <img class="contact__img" src="img/phone.png" alt="">
-          <span class="contact__phone">
-            +7(967)-976-12-21
-          </span>
-        </a>
+      </div>
+    </header>
+
+    <main class="main" id="main">
+      <div class="container">
+        <div class="main__inner">
+          <h1 class="main__title">DSP Logistic</h1>
+          <p class="main__subtitle">Все трудности берем на себя</p>
+          <div class="main__btns">
+            <button class="main__btn main__btn-primary">Оформить заказ</button>
+            <button class="main__btn main__btn-secondary">
+              Рассчитать путь
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <section class="about" id="about">
+      <div class="container">
+        <div class="about__inner">
+          <div class="about__top">
+            <div class="about__text">
+              <h2 class="about__text-title">О нас</h2>
+              <p class="about__text-description">
+                DSP Logistic оказывает широкий спектр услуг по грузоперевозкам
+                разного уровня. Мы ответственно подходим к каждому заказу и
+                подбираем оптимальное решение, которое будет учитывать все
+                требования нашего клиента.
+              </p>
+            </div>
+            <img
+              class="about__top-img about__img"
+              src="img/imgTop.jpg"
+              alt=""
+            />
+          </div>
+          <div class="about__central">
+            <div class="about__text">
+              <h4 class="about__title">От нас:</h4>
+              <p class="about__central-description">
+                Подробную консультацию, доступные цены, тщательное планирование,
+                полную материальную ответственность, сопровождение на всех
+                этапах перевозки, и конечно же, максимальное спокойствие.
+              </p>
+            </div>
+            <img class="about__central-img" src="img/imgCenter.jpg" alt="" />
+          </div>
+          <div class="about__bottom">
+            <div class="about__text">
+              <h4 class="about__title">От вас:</h4>
+              <p class="about__bottom-description">
+                Сделать один звонок в DSP Logistic, рассказать о Ваших
+                пожеланиях специалисту, и наша команда профессионалов заберёт
+                все беспокойства о переезде на себя.
+              </p>
+              <span class="about__bottom-description">
+                В наших приоритетах, сберечь ваше время, деньги и нервы.
+              </span>
+            </div>
+            <img class="about__bottom-img" src="img/imgBottom.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="stocks" id="stocks">
+    <div class="container">
+      <div class="stocks__inner">
+        <h2 class="stocks__title">
+          Акции
+        </h2>
+        <div class="stocks__packet stocks__packet1">
+            <h3 class="stocks__packet-title">
+              1 Пакет — домашний
+            </h3>
+            <p class="stocks__packet-subtitle">
+              В данный пакет входят услуги грузоперевозок из квартир.
+            </p>
+            <div class="stocks__packet-inner">
+              <img class="stocks__packet-img" src="img/Rectangle 28.jpg" alt="">
+              
+            </div>
+        </div>
+        <div class="stocks__packet stocks__packet2">
+            <h3 class="stocks__packet-title">
+              2 Пакет — офисный
+            </h3>
+            <p class="stocks__packet-subtitle">
+              В данный пакет входят услуги грузоперевозок из офисов.
+            </p>
+            <div class="stocks__packet-inner">
+              <img class="stocks__packet-img" src="img/Rectangle 35.jpg" alt="">
+              
+            </div>
+        </div>
+        <div class="stocks__packet stocks__packet3">
+            <h3 class="stocks__packet-title">
+              3 Пакет — дачный
+            </h3>
+            <p class="stocks__packet-subtitle">
+              В данный пакет входят услуги грузоперевозок из дачных и частных домов.
+            </p>
+            <div class="stocks__packet-inner">
+              <img class="stocks__packet-img" src="img/Rectangle 39.jpg" alt="">
+              <div class="stocks__tabs">
+                <nav class="stocks__tabs-links">
+                  <a class="stocks__tabs-link" href="#tab-1">Пакет S</a>
+                  <a class="stocks__tabs-link" href="#content-2">Пакет m</a>
+                  <a class="stocks__tabs-link" href="#content-3">Пакет l </a>
+                  <a class="stocks__tabs-link" href="#tab-4">Пакет xl </a>
+                </nav>
+                <div class="stocks__tabs-body">
+                  <div class= "stocks__tabs-item" id="tab-1">
+                    Содержимое 1...
+                  </div>
+                  <div class="stocks__tabs-item" id="content-2">
+                    <p class="stocks__tabs-text">
+                      В стоимость перевозки входит: мебель или бытовая техника (крупногабаритная холодос и пр.) неограниченное кол-во, личные вещи  (неограниченное кол-во мешков, коробок, чемоданов и пр). Время — неограниченно.
+                    </p>
+                  </div>
+                  <div class="stocks__tabs-item" id="content-3">
+                    Содержимое 3...
+                  </div>
+                  <div class="stocks__tabs-item" id="tab-4">
+                    <p class="stocks__tabs-text">
+                      В стоимость перевозки входит: мебель или бытовая техника (крупногабаритная холодос и пр.) неограниченное кол-во, личные вещи  (неограниченное кол-во мешков, коробок, чемоданов и пр). Время — неограниченно.
+                    </p>
+                    <img class="stocks__tabs-img" src="img/wooden-chair-in-spacious-apartment-PJ5SCQ8 3.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <span class="stocks__additional">
+          +к каждому дачному пакету 20 рублей за 1 км за КАД
+        </span>
+        <div class="stocks__aservices"></div>
       </div>
     </div>
-  </header>
+  </section> -->
 
-  <main class="main">
-    <div class="container">
-      <div class="main__inner">
-        <h1 class="main__title">
-          DSP Logistic
-        </h1>
-        <p class="main__subtitle">
-          Все трудности берем на себя
+    <section class="services" id="services">
+      <div class="container">
+        <h2 class="services__title">Услуги</h2>
+        <p class="services__text">
+          Здесь вы можете ознакомиться со всеми ценами наших услуг.
         </p>
-        <div class="main__btns">
-          <button class="main__btn main__btn-primary">Оформить заказ</button>
-          <button class="main__btn main__btn-secondary">Рассчитать путь</button>
+        <ul class="services__inner">
+          <li class="services__item">
+            <input type="checkbox" />
+            <i></i>
+            <h5 class="services__item-text">Грузчики</h5>
+            <div
+              class="services__item-inner services__item-first services__last"
+            >
+              <span class="services__item-sub">
+                По Санкт-Петербургу (в пределах КАД)
+              </span>
+              <div class="services__wrapper">
+                <p class="services__item-subtitle services__wrapper-text">
+                  Подача + 1й час работы 1 грузчика
+                  <span class="services__wrapper-cost"> 1200 ₽ </span>
+                </p>
+                <span class="services__wrapper-subtitle">
+                  Каждый последующий час работы грузчика 500₽
+                </span>
+              </div>
+              <div class="services__wrapper">
+                <p class="services__item-subtitle services__wrapper-text">
+                  Подача + 1й час работы 2 грузчика
+                  <span class="services__wrapper-cost"> 1700 ₽ </span>
+                </p>
+                <span class="services__wrapper-subtitle">
+                  Каждый последующий час работы грузчика 500₽
+                </span>
+              </div>
+              <a class="services__item-link services__link" href="#"
+                >Заказать</a
+              >
+            </div>
+          </li>
+
+          <li class="services__item">
+            <input type="checkbox" />
+            <i></i>
+            <h5 class="services__item-text">Грузоперевозки</h5>
+            <div
+              class="services__item-inner services__item-first services__last"
+            >
+              <span class="services__item-sub">
+                По Санкт-Петербургу (в пределах КАД)
+              </span>
+              <div class="services__wrapper">
+                <p class="services__item-subtitle services__wrapper-text">
+                  Подача + 1й час работы 1 грузчика
+                  <span class="services__wrapper-cost"> 1200 ₽ </span>
+                </p>
+                <span class="services__wrapper-subtitle">
+                  Каждый последующий час работы грузчика 500₽
+                </span>
+              </div>
+              <div class="services__wrapper">
+                <p class="services__item-subtitle services__wrapper-text">
+                  Подача + 1й час работы 2 грузчика
+                  <span class="services__wrapper-cost"> 1700 ₽ </span>
+                </p>
+                <span class="services__wrapper-subtitle">
+                  Каждый последующий час работы грузчика 500₽
+                </span>
+              </div>
+              <a class="services__item-link services__link" href="#"
+                >Заказать</a
+              >
+            </div>
+          </li>
+
+          <li class="services__item">
+            <input type="checkbox" />
+            <i></i>
+            <h5 class="services__item-text">Вывоз мусора</h5>
+            <div class="services__item-inner services__last">
+              <div class="services__wrapper">
+                <p class="services__item-subtitle">
+                  Газель 3,5 т., 15 м3 (до 5 м3)
+                  <span class="services__wrapper-cost"> от 4000 ₽ </span>
+                </p>
+              </div>
+              <div class="services__wrapper">
+                <p class="services__item-subtitle">
+                  Газель 3,5 т., 15 м3 (до 10 м3)
+                  <span class="services__wrapper-cost"> от 6000 ₽ </span>
+                </p>
+              </div>
+              <div class="services__wrapper">
+                <p class="services__item-subtitle">
+                  Газель 3,5 т., 15 м3 (до 15 м3)
+                  <span class="services__wrapper-cost"> от 8500 ₽ </span>
+                </p>
+              </div>
+              <div class="services__wrapper">
+                <p class="services__item-subtitle">
+                  Камаз с пухто 10 т., 27 м3 (до 20 м3)
+                  <span class="services__wrapper-cost"> от 14000 ₽ </span>
+                </p>
+              </div>
+              <div class="services__wrapper">
+                <p class="services__item-subtitle">
+                  Камаз с пухто 10 т., 27 м3 (до 27 м3)
+                  <span class="services__wrapper-cost"> от 15000 ₽ </span>
+                </p>
+              </div>
+              <a class="services__item-link services__link" href="#"
+                >Заказать</a
+              >
+            </div>
+          </li>
+
+          <li class="services__item">
+            <input class="services__item" type="checkbox" />
+            <i></i>
+            <h5 class="services__item-text">Демонтаж</h5>
+            <div class="services__item-inner">
+              <span class="services__item-description">
+                Стоимость рассчитывается индивидуально. Цена договорная
+              </span>
+              <a class="services__item-link" href="#">Заказать</a>
+            </div>
+          </li>
+
+          <li class="services__item">
+            <input type="checkbox" />
+            <i></i>
+            <h5 class="services__item-text">Утилизация</h5>
+            <div class="services__item-inner">
+              <span class="services__item-description">
+                Стоимость рассчитывается индивидуально. Цена договорная
+              </span>
+              <a class="services__item-link" href="#">Заказать</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="why" id="why">
+      <div class="container">
+        <h2 class="why__title">Почему мы?</h2>
+        <p class="why__description">То, за что нас любят наши клиенты.</p>
+        <div class="why__inner">
+          <div class="why__top">
+            <img class="why__top-img why__img" src="img/whyTop.jpg" alt="" />
+            <div class="why__text">
+              <h4 class="why__text-title">Поддержка</h4>
+              <p class="why__text-description">
+                Мы контролируем все этапы перевозки и всегда находимся на связи
+                - ни один вопрос не останется без ответа, ни одна проблема не
+                останется не решённой.
+              </p>
+            </div>
+          </div>
+          <div class="why__center">
+            <div class="why__text">
+              <h4 class="why__text-title">Качество</h4>
+              <p class="why__text-description">
+                Мы берём ответственность за каждый перевозимый груз.
+                Своевременное выполнение взятых обязательств и сохранность груза
+                для нас основной приоритет.
+              </p>
+            </div>
+            <img
+              class="why__center-img why__img"
+              src="img/whyCenter.jpg"
+              alt=""
+            />
+          </div>
+          <div class="why__bottom">
+            <img
+              class="why__bottom-img why__img"
+              src="img/whyBottom.jpg"
+              alt=""
+            />
+            <div class="why__text">
+              <h4 class="why__text-title">Цена</h4>
+              <p class="why__text-description">
+                Наши цены являются оптимальными для обеих сторон. Критерии
+                формирования цены вы всегда можете утончить, позвонив нам.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </main>
+    </section>
 
-  <section class="about">
-    <div class="container">
-      <div class="about__inner">
-        <div class="about__top">
-          <div class="about__text">
-            <h2 class="about__text-title">
-              О нас
-            </h2>
-            <p class="about__text-description">
-              DSP Logistic оказывает широкий спектр услуг по грузоперевозкам разного уровня. Мы ответственно подходим к каждому заказу и подбираем оптимальное решение, которое будет учитывать все требования нашего клиента.
-            </p>
-          </div>
-          <img class="about__top-img about__img" src="img/imgTop.jpg" alt="">
-        </div>
-        <div class="about__central">
-          <div class="about__text">
-            <h4 class="about__title">
-              От нас:
-            </h4>
-            <p class="about__central-description">
-              Подробную консультацию, доступные цены, тщательное планирование, полную материальную ответственность, сопровождение на всех этапах перевозки, и конечно же, максимальное спокойствие.
-            </p>
-          </div>
-          <img class="about__central-img" src="img/imgCenter.jpg" alt="">
-        </div>
-        <div class="about__bottom">
-          <div class="about__text">
-            <h4 class="about__title">
-              От вас:
-            </h4>
-            <p class="about__bottom-description">
-              Сделать один звонок в DSP Logistic, рассказать о Ваших пожеланиях специалисту, и наша команда профессионалов заберёт 
-              все беспокойства о переезде на себя.
-            </p>
-            <span class="about__bottom-description">
-              В наших приоритетах, сберечь ваше время, деньги и нервы.
-            </span>
-          </div>
-          <img class="about__bottom-img" src="img/imgBottom.jpg" alt="">
-        </div>
+    <section class="reviews" id="reviews">
+      <div class="container">
+        <h2 class="reviews__title">Отзывы</h2>
+        <p class="reviews__description">Что говорят о нас наши клиенты.</p>
       </div>
-    </div>
-  </section>
-
-
-
-  <script src="js/main.js"></script>
-  
-</body>
+    </section>
+    <script src="js/main.js"></script>
+  </body>
 </html>
