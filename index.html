@@ -4,12 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DSP Logistic</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header class="header sticky" id="header">
@@ -39,11 +36,11 @@
               <li class="nav__list-item">
                 <a class="nav__list-link" href="#why"> Почему мы </a>
               </li>
-              <li class="nav__list-item">
+              <!-- <li class="nav__list-item">
                 <a class="nav__list-link" href="#"> Отзывы </a>
-              </li>
+              </li> -->
               <li class="nav__list-item">
-                <a class="nav__list-link" href="#"> Частые вопросы </a>
+                <a class="nav__list-link" href="#questions"> Частые вопросы </a>
               </li>
             </ul>
           </nav>
@@ -126,37 +123,138 @@
       </div>
     </section>
 
-    <!-- <section class="stocks" id="stocks">
-    <div class="container">
-      <div class="stocks__inner">
-        <h2 class="stocks__title">
-          Акции
-        </h2>
-        <div class="stocks__packet stocks__packet1">
-            <h3 class="stocks__packet-title">
-              1 Пакет — домашний
-            </h3>
+    <section class="stocks" id="stocks">
+      <div class="container">
+        <div class="stocks__inner">
+          <h2 class="stocks__title">Акции</h2>
+          <div class="stocks__packet stocks__packet-1">
+            <h3 class="stocks__packet-title">1 Пакет — домашний</h3>
             <p class="stocks__packet-subtitle">
               В данный пакет входят услуги грузоперевозок из квартир.
             </p>
             <div class="stocks__packet-inner">
-              <img class="stocks__packet-img" src="img/Rectangle 28.jpg" alt="">
-              
+              <img
+                class="stocks__packet-img"
+                src="img/Rectangle 28.jpg"
+                alt=""
+              />
+              <div class="stocks__packet-tab">
+                <div class="stocks__header-1 stocks__header">
+                  <ul>
+                    <li class="stocks__title-tab active">
+                      <p class="stocks__tab-item" data-id="item_1">Студия</p>
+                    </li>
+                    <li class="stocks__title-tab">
+                      <p class="stocks__tab-item" data-id="item_2">Однокомнатаня квартира</p>
+                    </li>
+                    <li class="stocks__title-tab">
+                      <p class="stocks__tab-item" data-id="item_3">Однокомнатаня квартира</p>
+                    </li>
+                    <li class="stocks__title-tab">
+                      <p class="stocks__tab-item" data-id="item_4">Трехкомнатная квартира</p>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="stocks__tab" data-id="item_1">
+                  <p class="stocks__tab-text">
+                    В стоимость перевозки входит: холодильник, стиральная
+                    машина, стол, стулья, личные вещи (до 20 мешков, коробок,
+                    чемоданов и пр). Время — неограниченно.
+                  </p>
+                  <img src="./img/tab_item-1.jpg" alt="" />
+                  <div class="stocks__tab-wrapper">
+                    <p class="stocks__tab-subtitle">Цена: <span class="old">3780 ₽</span><span>3399 ₽</span></p>
+                    <a class="stocks__item-link" href="#">Заказать</a>
+                  </div>
+                </div>
+                <div class="stocks__tab d-none" data-id="item_2">
+                  <p class="stocks__tab-text">
+                    В перевозку входит: холодильник, стиральная машина, стол, стулья, компьютерный стол, шкаф, прихожая, диван (кровать), личные вещи (до 25 мешков,коробок,чемоданов и пр).
+                    Время — неограниченно.
+                  </p>
+                  <img src="./img/tab_item-2.jpg" alt="" />
+                  <div class="stocks__tab-wrapper">
+                    <p class="stocks__tab-subtitle">Цена: <span class="old">3780 ₽</span><span>4999 ₽</span></p>
+                    <a class="stocks__item-link" href="#">Заказать</a>
+                  </div>
+                </div>
+                <div class="stocks__tab d-none" data-id="item_3">
+                  <p class="stocks__tab-text">
+                    В перевозку входит: холодильник, стиральная машина, стол, стулья, компьютерный стол, шкаф (до 2 шт), прихожая, диван (кровать) (до 3х шт), кресла личные вещи (неограниченное кол-во мешков,коробок,чемоданов и пр).
+                    Время — неограниченно.
+                  </p>
+                  <img src="./img/tab_item-3.jpg" alt="" />
+                  <div class="stocks__tab-wrapper">
+                    <p class="stocks__tab-subtitle">Цена: <span class="old">7560 ₽</span><span>6799 ₽</span></p>
+                    <a class="stocks__item-link" href="#">Заказать</a>
+                  </div>
+                </div>
+                <div class="stocks__tab d-none" data-id="item_4">
+                  <p class="stocks__tab-text">
+                    В перевозку входит: холодильник, стиральная машина, стол, стулья, компьютерный стол, шкафы, прихожая, диваны (кровати), кресла личные вещи (неограниченное кол-во мешков/коробок/чемоданов и пр). (Полная машина под забивку пох чего). Время — неограниченно.
+                  </p>
+                  <img src="./img/tab_item-4.jpg" alt="" />
+                  <div class="stocks__tab-wrapper">
+                    <p class="stocks__tab-subtitle">Цена: <span class="old">9450 ₽</span><span>8999 ₽</span></p>
+                    <a class="stocks__item-link" href="#">Заказать</a>
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
-        <div class="stocks__packet stocks__packet2">
-            <h3 class="stocks__packet-title">
-              2 Пакет — офисный
-            </h3>
+          </div>
+          <!-- <div class="stocks__packet stocks__packet-2">
+            <h3 class="stocks__packet-title">2 Пакет — офисный</h3>
             <p class="stocks__packet-subtitle">
               В данный пакет входят услуги грузоперевозок из офисов.
             </p>
             <div class="stocks__packet-inner">
-              <img class="stocks__packet-img" src="img/Rectangle 35.jpg" alt="">
-              
+              <img class="stocks__packet-img" src="img/Rectangle 35.jpg" alt=""/>
+              <div class="stocks__packet-tab">
+                <div class="stocks__header-2 stocks__header">
+                  <ul>
+                    <li class="stocks__title-tab active">
+                      <a href="#" class="stocks__tab-item" data-id="item_1">Студия</a>
+                    </li>
+                    <li class="stocks__title-tab">
+                      <a href="#" class="stocks__tab-item" data-id="item_2">Однокомнатаня квартира</a>
+                    </li>
+                    <li class="stocks__title-tab">
+                      <a href="#" class="stocks__tab-item" data-id="item_3">Однокомнатаня квартира</a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="stocks__tab" data-id="item_1">
+                  <p>
+                    В стоимость перевозки входит: холодильник, стиральная
+                    машина, стол, стулья, личные вещи (до 20 мешков, коробок,
+                    чемоданов и пр). Время — неограниченно.
+                  </p>
+                  <img src="./img/tab_item-1.jpg" alt="" />
+                </div>
+                <div class="stocks__tab d-none" data-id="item_2">
+                  <p>
+                    В перевозку входит: мебель или бытовая техника
+                    (крупногабаритная холодос и пр.) неограниченное кол-во,
+                    личные вещи (неограниченное кол-во мешков, коробок,
+                    чемоданов и пр). Время — неограниченно.
+                  </p>
+                  <img src="./img/tab_item.png" alt="" />
+                </div>
+                <div class="stocks__tab d-none" data-id="item_3">
+                  <p>
+                    В перевозку входит: мебель или бытовая техника
+                    (крупногабаритная холодос и пр.) неограниченное кол-во,
+                    личные вещи (неограниченное кол-во мешков, коробок,
+                    чемоданов и пр). Время — неограниченно.
+                  </p>
+                  <img src="./img/tab_item.png" alt="" />
+                </div>
+              </div>
             </div>
-        </div>
-        <div class="stocks__packet stocks__packet3">
+          </div> -->
+        <!-- <div class="stocks__packet stocks__packet3">
             <h3 class="stocks__packet-title">
               3 Пакет — дачный
             </h3>
@@ -193,14 +291,18 @@
                 </div>
               </div>
             </div>
+        </div>  -->
+
+          <div class="stocks__additional">
+            +к каждому дачному пакету 20 рублей за 1 км за КАД
+          </div>
+          <p class="stocks__aservices-title">Дополнительные услуги</p>
+          <div class="stocks__aservices">
+            
+          </div>
         </div>
-        <span class="stocks__additional">
-          +к каждому дачному пакету 20 рублей за 1 км за КАД
-        </span>
-        <div class="stocks__aservices"></div>
       </div>
-    </div>
-  </section> -->
+    </section>
 
     <section class="services" id="services">
       <div class="container">
@@ -251,32 +353,80 @@
               class="services__item-inner services__item-first services__last"
             >
               <span class="services__item-sub">
-                По Санкт-Петербургу (в пределах КАД)
+                Стоимость перевозки (без погрузки/разгрузки):
               </span>
+              <h6 class="services__item-title">
+                Грузоперевозки по Санкт-Петербургу (в пределах КАД)
+              </h6>
               <div class="services__wrapper">
                 <p class="services__item-subtitle services__wrapper-text">
-                  Подача + 1й час работы 1 грузчика
+                  Подача + 1й час работы авто
                   <span class="services__wrapper-cost"> 1200 ₽ </span>
                 </p>
                 <span class="services__wrapper-subtitle">
-                  Каждый последующий час работы грузчика 500₽
+                  Каждый последующий час 800₽
                 </span>
               </div>
               <div class="services__wrapper">
                 <p class="services__item-subtitle services__wrapper-text">
-                  Подача + 1й час работы 2 грузчика
-                  <span class="services__wrapper-cost"> 1700 ₽ </span>
+                  Подача + 1й час работы авто+грузчик
+                  <span class="services__wrapper-cost"> 1600 ₽ </span>
                 </p>
                 <span class="services__wrapper-subtitle">
-                  Каждый последующий час работы грузчика 500₽
+                  Каждый последующий час 1300₽
                 </span>
               </div>
-              <a class="services__item-link services__link" href="#"
-                >Заказать</a
-              >
+              <div class="services__wrapper">
+                <p class="services__item-subtitle services__wrapper-text">
+                  Подача + 1й час работы авто+ 2 грузчика
+                  <span class="services__wrapper-cost"> 2000 ₽ </span>
+                </p>
+                <span class="services__wrapper-subtitle">
+                  Каждый последующий час 1800₽
+                </span>
+              </div>
+              <h6 class="services__item-title">
+                Грузоперевозки по Ленинградской области (за КАД)
+              </h6>
+              <div class="services__wrapper">
+                <p class="services__item-subtitle services__wrapper-text">
+                  Подача + 1й час работы авто
+                  <span class="services__wrapper-cost"> 1200 ₽ </span>
+                </p>
+                <span class="services__wrapper-subtitle">
+                  Каждый последующий час 800₽
+                </span>
+              </div>
+              <div class="services__wrapper">
+                <p class="services__item-subtitle services__wrapper-text">
+                  Подача + 1й час работы авто+грузчик
+                  <span class="services__wrapper-cost"> 1600 ₽ </span>
+                </p>
+                <span class="services__wrapper-subtitle">
+                  Каждый последующий час 1300₽
+                </span>
+              </div>
+              <div class="services__wrapper">
+                <p class="services__item-subtitle services__wrapper-text">
+                  Подача + 1й час работы авто + 2 грузчика + 40 р. за 1 км
+                  <span class="services__wrapper-cost"> 2000 ₽ </span>
+                </p>
+                <span class="services__wrapper-subtitle">
+                  Каждый последующий час 1800₽
+                </span>
+              </div>
+              <!-- <div class="services__extension-items">
+                <div class="services__extension-item">
+                  <p>Доп услуги</p>
+                </div>
+                <div class="services__extension-item">
+                  <p>Доп услуги</p>
+                </div>
+                <a class="services__item-link" href="#">Заказать</a>
+              </div> -->
             </div>
           </li>
-
+          <!-- допилить -->
           <li class="services__item">
             <input type="checkbox" />
             <i></i>
@@ -394,12 +544,103 @@
       </div>
     </section>
 
-    <section class="reviews" id="reviews">
+    <!-- <section class="reviews" id="reviews">
       <div class="container">
         <h2 class="reviews__title">Отзывы</h2>
         <p class="reviews__description">Что говорят о нас наши клиенты.</p>
       </div>
+    </section> -->
+
+    <section class="questions" id="questions">
+      <div class="container">
+        <h2 class="questions__title">Вопросы</h2>
+        <p class="questions__description">Здесь собраны все частозадаваемые вопросы.</p>
+        <ul class="questions__items">
+          <li class="questions__item">
+            <input class="questions__item-input" type="checkbox" />
+            <i></i>
+            <b></b>
+            <h5 class="questions__item-title">Можно ли скачать урок?</h5>
+            <div class="questions__item-inner">
+              <p class="questions__item-text">
+                Проверочные материалы к урокам (тесты и тренажёры) разработаны к части уроков. Если тест или тренажёр разработан, вы сможете увидеть его под видео в соответствующем разделе. Обращаем ваше внимание, что эта функция доступна только для зарегистрированных пользователей.+
+              </p>
+            </div>
+          </li>
+          <li class="questions__item">
+            <input class="questions__item-input" type="checkbox" />
+            <i></i>
+            <b></b>
+            <h5 class="questions__item-title">Почему некоторые уроки выделены серым цветом и недоступны для просмотра?</h5>
+            <div class="questions__item-inner">
+              <p class="questions__item-text">
+                Проверочные материалы к урокам (тесты и тренажёры) разработаны к части уроков. Если тест или тренажёр разработан, вы сможете увидеть его под видео в соответствующем разделе. Обращаем ваше внимание, что эта функция доступна только для зарегистрированных пользователей.+
+              </p>
+            </div>
+          </li>
+          <li class="questions__item">
+            <input class="questions__item-input" type="checkbox" />
+            <i></i>
+            <b></b>
+            <h5 class="questions__item-title">Не работает видео/тест/тренажер/вопрос, комментарий к уроку, что делать?</h5>
+            <div class="questions__item-inner">
+              <p class="questions__item-text">
+                Проверочные материалы к урокам (тесты и тренажёры) разработаны к части уроков. Если тест или тренажёр разработан, вы сможете увидеть его под видео в соответствующем разделе. Обращаем ваше внимание, что эта функция доступна только для зарегистрированных пользователей.+
+              </p>
+            </div>
+          </li>
+          <li class="questions__item">
+            <input class="questions__item-input" type="checkbox" />
+            <i></i>
+            <b></b>
+            <h5 class="questions__item-title">Есть ли курсы подготовки к ЕГЭ?</h5>
+            <div class="questions__item-inner">
+              <p class="questions__item-text">
+                Проверочные материалы к урокам (тесты и тренажёры) разработаны к части уроков. Если тест или тренажёр разработан, вы сможете увидеть его под видео в соответствующем разделе. Обращаем ваше внимание, что эта функция доступна только для зарегистрированных пользователей.+
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
     </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__wrapper">
+          <div class="footer__item">
+            <a class="footer__link" href="#"><span>Меню</span></a><br />
+            <a class="footer__link" href="#about">О нас</a><br />
+            <a class="footer__link" href="#stocks">Акции</a>
+          </div>
+          <div class="footer__item">
+            <a class="footer__link" href="#services">Услуги</a><br />
+            <a class="footer__link" href="#why">Почему мы</a><br />
+            <a class="footer__link" href="#">Отзывы</a>
+          </div>
+          <div class="footer__item">
+            <a class="footer__link" href="#questions">Частые вопросы</a><br />
+          </div>
+          <div class="footer__item">
+            <p class="footer__text">Контакты</p>
+            <a class="footer__link" class="contact" href="tel:89679761221">+7(967)-976-12-21</a>
+          </div>
+          <div class="footer__item">
+            <p class="footer__text">Соц. сети</p>
+            <a class="footer__link footer__link-first" href="#"><img src="img/vk.svg" alt="" /></a>
+            <a class="footer__link" href="#"><img src="img/ins.svg" alt="" /></a>
+          </div>
+        </div>
+        <div class="footer__copy">
+          <p>© политка конфиденциальности. Все права защищены.</p>
+        </div>
+      </div>
+      <div class="footer__author">
+        <div class="container">
+          
+        </div>
+      </div>
+</footer>
+
     <script src="js/main.js"></script>
   </body>
 </html>
