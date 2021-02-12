@@ -6,8 +6,8 @@ window.addEventListener('DOMContentLoaded', () => {
       popupName = document.querySelector('.popup__name'),
       popupPhone = document.querySelector('.popup__phone'),
       popupEmail = document.querySelector('.popup__email'),
-      popupMess = document.querySelector('.poput__mess');
-
+      popupMess = document.querySelector('.popup__mess');
+  console.log(popupMess.value);
   for (let anchor of anchors) {
     anchor.addEventListener('click', event => {
       event.preventDefault();
@@ -69,7 +69,8 @@ window.addEventListener('DOMContentLoaded', () => {
         popUp = document.getElementById('popup');
 
         popupBtn.forEach(elem => {
-          elem.addEventListener('click', () => {
+          elem.addEventListener('click', e => {
+            e.preventDefault();
             popUp.style.display = 'block';
             document.body.style.overflowY = 'hidden';
           });
