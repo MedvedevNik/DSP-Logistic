@@ -85,6 +85,9 @@ a:focus {
 }
 
 .header {
+  position: fixed;
+  z-index: 7;
+  width: 100%;
   background: #fff;
   top: 0;
   max-height: 94px;

@@ -111,7 +111,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
             console.log(scrolled);
   
-            if (scrolled >= 900 && scrolled <= 8050) {
+            if (scrolled >= 900 && scrolled <= 7950) {
                 scrollUp.style.display = 'block';
             } else {
                 scrollUp.style.display = 'none';
