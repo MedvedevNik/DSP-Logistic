@@ -288,7 +288,7 @@ a:focus {
 
 .about__top {
   max-width: 405px;
-  margin-bottom: 321px;
+  margin-bottom: 20%;
 }
 
 .about__text {
@@ -325,9 +325,9 @@ a:focus {
 
 .about__central {
   max-width: 385px;
-  margin-right: 237px;
+  margin-right: 10%;
   margin-left: auto;
-  margin-bottom: 378px;
+  margin-bottom: 30%;
 }
 
 .about__title {
@@ -396,8 +396,8 @@ a:focus {
 
 .stocks__packet-tab {
   position: absolute;
-  top: 150px;
-  left: 513px;
+  top: 12%;
+  left: 25%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -488,6 +488,7 @@ a:focus {
 .stocks__tab-text {
   color: #2F2F2F;
   margin-bottom: 27px;
+  height: 150px;
 }
 
 .stocks__tab-subtitle {
@@ -757,7 +758,7 @@ input[type=checkbox]:checked ~ .services__last {
   padding: 28px 35px;
   border: 1px solid #dcdcdc;
   margin-right: 20px;
-  max-width: 495px;
+  max-width: 35%;
   line-height: 31px;
 }
 
@@ -832,20 +833,20 @@ input[type=checkbox]:checked ~ .services__item-first {
 .why__top {
   max-width: 500px;
   margin-left: auto;
-  margin-right: 184px;
+  margin-right: 15%;
   margin-bottom: 182px;
 }
 
 .why__center {
   max-width: 513px;
-  margin-left: 385px;
+  margin-left: 25%;
   margin-bottom: 215px;
 }
 
 .why__bottom {
   max-width: 513px;
   margin-left: auto;
-  margin-right: 356px;
+  margin-right: 20%;
   margin-bottom: 182px;
 }
 
@@ -901,11 +902,10 @@ input[type=checkbox]:checked ~ .services__item-first {
 
 .questions__title::after {
   left: auto;
-  right: 706px;
+  right: 46.5%;
 }
 
 .questions__items {
-  max-width: 1006px;
   width: 100%;
   margin: 80px auto 0;
 }
@@ -1051,8 +1051,8 @@ input[type=checkbox]:checked ~ .questions__item-inner {
 }
 
 .footer__wrapper {
-  margin-right: 290px;
-  margin-left: 290px;
+  margin-right: 10%;
+  margin-left: 10%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1221,21 +1221,27 @@ input[type=checkbox]:checked ~ .questions__item-inner {
   position: fixed;
   bottom: 100px;
   right: 50px;
-  width: 145px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   z-index: 300;
-  padding: 0 2px;
   cursor: pointer;
-  -webkit-transition: 1s;
-  transition: 1s;
   background-color: white;
 }
 
-@media (max-width: 1838px) {
+@media (max-width: 1830px) {
+  .container {
+    padding: 0 125px;
+  }
+  .about__top {
+    margin-bottom: 15%;
+  }
   .about__img {
-    max-width: 850px;
+    max-width: 55%;
+  }
+  .about__central-img {
+    top: 26%;
   }
   .about__central {
-    margin-right: 125px;
+    margin-right: 8%;
   }
 }

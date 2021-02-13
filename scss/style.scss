@@ -258,7 +258,7 @@ a:focus {
   }
   &__top {
     max-width: 405px;
-    margin-bottom: 321px;
+    margin-bottom: 20%;
   }
   &__text {
     padding-top: 82px;
@@ -291,9 +291,9 @@ a:focus {
   }
   &__central {
     max-width: 385px;
-    margin-right: 237px;
+    margin-right: 10%;
     margin-left: auto;
-    margin-bottom: 378px;
+    margin-bottom: 30%;
   }
   &__title {
     font-weight: 800;
@@ -356,8 +356,8 @@ a:focus {
   }
   &__packet-tab {
     position: absolute;
-    top: 150px;
-    left: 513px;
+    top: 12%;
+    left: 25%;
     display: flex;
     flex-direction: row;
     max-width: 1010px;
@@ -430,6 +430,7 @@ a:focus {
   &__tab-text {
     color: #2F2F2F;
     margin-bottom: 27px;
+    height: 150px;
   }
   &__tab-subtitle {
     position: relative;
@@ -652,7 +653,7 @@ a:focus {
     padding: 28px 35px;
     border: 1px solid #dcdcdc;
     margin-right: 20px;
-    max-width: 495px;
+    max-width: 35%;
     line-height: 31px;
 
     &.second {
@@ -729,18 +730,18 @@ a:focus {
   &__top {
     max-width: 500px;
     margin-left: auto;
-    margin-right: 184px;
+    margin-right: 15%;
     margin-bottom: 182px;
   }
   &__center {
     max-width: 513px;
-    margin-left: 385px;
+    margin-left: 25%;
     margin-bottom: 215px;
   }
   &__bottom {
     max-width: 513px;
     margin-left: auto;
-    margin-right: 356px;
+    margin-right: 20%;
     margin-bottom: 182px;
   }
   &__text {
@@ -791,10 +792,9 @@ a:focus {
   }
   &__title::after {
     left: auto;
-    right: 706px;
+    right: 46.5%;
   }
   &__items {
-    max-width: 1006px;
     width: 100%;
     margin: 80px auto 0;
   }
@@ -918,8 +918,8 @@ a:focus {
   background-color: #2F2F2F;
   color: #fff;
   &__wrapper {
-    margin-right: 290px;
-    margin-left: 290px;
+    margin-right: 10%;
+    margin-left: 10%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -1080,23 +1080,42 @@ a:focus {
   position: fixed;
   bottom: 100px;
   right: 50px;
-  width: 145px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   z-index: 300;
-  padding: 0 2px;
   cursor: pointer;
-  transition: 1s;
   background-color: rgb(255 , 255, 255);
 }
 
 
-@media (max-width: 1838px) {
+@media (max-width: 1830px) {
+  .container {
+    padding: 0 125px;
+  }
   .about {
+    &__top  {
+      margin-bottom: 15%;
+    }
     &__img {
-      max-width: 850px;
+      max-width: 55%;
+    }
+    &__central-img {
+      top: 26%;
     }
     &__central {
-      margin-right: 125px;
+      margin-right: 8%;
+    }
+  }
+}
+
+@media (max-width: 1490px) {
+  .about {
+    &__central {
+    }
+  }
+
+  .stocks {
+    &__packet-tab {
     }
   }
 }
