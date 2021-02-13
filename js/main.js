@@ -167,7 +167,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const postData = data => fetch('./telegram.php', {
         method: 'POST',
         headers: {
-            'Content-Type': 'multipart/form-data',
+            'Content-Type': 'application/x-www-form-urlencoded',
         },
         body: data,
     }); // end postData
@@ -176,12 +176,13 @@ window.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         // statusMsg.classList.add('active');
 
-        const formData = new FormData(form);
-        const body = {};
+        const formData = new FormData(form);        
+        const temp = [];
 
         formData.forEach((val, key) => {
-            body[key] = val;
+            temp.push(`${key}=${val}`);
         });
+        const body = temp.join('&');
 
         postData(body)
             .then(response => {
