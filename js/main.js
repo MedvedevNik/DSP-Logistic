@@ -2,12 +2,7 @@
   
 window.addEventListener('DOMContentLoaded', () => {
 
-  const anchors = document.querySelectorAll('.anchor'),
-      popupName = document.querySelector('.popup__name'),
-      popupPhone = document.querySelector('.popup__phone'),
-      popupEmail = document.querySelector('.popup__email'),
-      popupMess = document.querySelector('.popup__mess');
-  console.log(popupMess.value);
+  const anchors = document.querySelectorAll('.anchor');
   for (let anchor of anchors) {
     anchor.addEventListener('click', event => {
       event.preventDefault();
@@ -20,22 +15,11 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const clearInput = () => {
-    popupEmail.value = '';
-    popupName.value = '';
-    popupPhone.value = '';
-    popupMess.value = '';
-  }
-
-  // tabs
-
-  const tabs = () => {
-    const tabHeader = document.querySelector('.stocks__header-1'),
-        tab = tabHeader.querySelectorAll('.stocks__title-tab'),
-        tabContent = document.querySelectorAll('.stocks__tab');
-
+  const tabs = selector => {
+    const tabPack = document.querySelector(selector),
+        tab = tabPack.querySelectorAll('.stocks__title-tab'),
+        tabContent = tabPack.querySelectorAll('.stocks__tab');
     const toggleTabContent = index => {
-      console.log(index);
       for (let i = 0; i < tabContent.length; i++) {
         if (index === i) {
             tab[i].classList.add('active');
@@ -47,10 +31,8 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     };
     
-    tabHeader.addEventListener('click', event => {
+    tabPack.addEventListener('click', event => {
       let target = event.target;
-
-      console.log(target);
 
       target = target.closest('.stocks__title-tab');
 
@@ -65,34 +47,28 @@ window.addEventListener('DOMContentLoaded', () => {
   };
 
   const togglePopup = () => {
-    const popupBtn = document.querySelectorAll('.popup-btn'),
-        popUp = document.getElementById('popup');
+    const popUp = document.getElementById('popup');
+    const popupForm = popUp.querySelector('#form');
+    popUp.style.display = 'block';
 
-        popupBtn.forEach(elem => {
-          elem.addEventListener('click', e => {
-            e.preventDefault();
-            popUp.style.display = 'block';
-            document.body.style.overflowY = 'hidden';
-          });
-        });
-      
-        popUp.addEventListener('click', event => {
-          let target = event.target;
-      
-          if (target.closest('.popup__close')) {
-            popUp.style.display = 'none';
-            clearInput();
-            document.body.style.overflowY = 'overlay';
-          } else {
-            target = target.closest('.popup__content');
-      
-            if (!target) {
-              popUp.style.display = 'none';
-              clearInput();
-              document.body.style.overflowY = 'overlay';
-            }
-          }
-        });
+    const handleClick = e => {
+      let { target } = e;
+  
+      if (target.closest('.popup__close')) {
+        popUp.style.display = 'none';
+        popupForm.reset();
+        document.body.style.overflowY = 'overlay';
+      } else {
+        target = target.closest('.popup__content');
+  
+        if (!target) {
+          popUp.style.display = 'none';
+          popupForm.reset();
+          document.body.style.overflowY = 'overlay';
+        }
+      }
+    }
+    popUp.addEventListener('click', handleClick);
   };
 
   const toTop = () => {
@@ -108,8 +84,6 @@ window.addEventListener('DOMContentLoaded', () => {
   
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
-
-            console.log(scrolled);
   
             if (scrolled >= 900 && scrolled <= 7950) {
                 scrollUp.style.display = 'block';
@@ -121,11 +95,10 @@ window.addEventListener('DOMContentLoaded', () => {
   };
 
     
-  const falidation = () => {
-
-    document.body.addEventListener('input', event => {
-      const target = event.target;
-
+  function falidation (selector) {
+    const form = document.querySelector(selector);
+    form.addEventListener('input', e => {
+      const { target } = e;
       if (target.matches('.popup__email')) {
         target.value = target.value.replace(/[^A-Za-z ,.@0-9]/gi, '');
         target.setAttribute('pattern', '[A-Za-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$');
@@ -176,10 +149,66 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  const domListeners = () => {
+    const handleHTMLclick = e => {
+      const { target } = e;
 
+      if (target.matches('.popup-btn')) {
+        e.preventDefault();
+        document.body.style.overflowY = 'hidden';
+        togglePopup();
+      }
+    } // end handleHTMLclick
+    document.querySelector('html').addEventListener('click', handleHTMLclick);
+  }
+
+  const sendForm = (selector) => {
+    const form = document.querySelector(selector);
+    const postData = data => fetch('./telegram.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'multipart/form-data',
+        },
+        body: data,
+    }); // end postData
+
+    const handlSubmit = e => {
+        e.preventDefault();
+        // statusMsg.classList.add('active');
+
+        const formData = new FormData(form);
+        const body = {};
+
+        formData.forEach((val, key) => {
+            body[key] = val;
+        });
+
+        postData(body)
+            .then(response => {
+                // statusMsg.classList.remove('active');
+                if (response.status !== 200) { throw new Error('status network not 200'); }
+                console.log(response);
+            })
+            .catch(error => {
+                console.warn(error);
+            })
+            .finally(() => {
+                form.reset();
+                // statusMsg.classList.remove('active');
+            });
+    }; // end submitHandler
+
+    form.addEventListener('submit', handlSubmit);
+};
+
+
+
+  tabs('.stocks__pack-1');
+  tabs('.stocks__pack-2');
+  tabs('.stocks__pack-3');
   toTop();
-  tabs();
-  togglePopup();
-  falidation();
+  domListeners();
+  falidation('.popup__form');
   maskPhone('.popup__phone');
+  sendForm('.popup__form');
 });
