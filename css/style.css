@@ -740,8 +740,40 @@ input[type=checkbox]:checked ~ .services__last {
       align-self: flex-end;
 }
 
+.services__extension-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .services__extension-item {
-  display: inline-block;
+  padding: 28px 35px;
+  border: 1px solid #dcdcdc;
+  margin-right: 20px;
+  max-width: 495px;
+  line-height: 31px;
+}
+
+.services__extension-item.second {
+  margin-right: auto;
+}
+
+.services__extension-item-title {
+  font-weight: 800;
+  line-height: 31px;
+  margin-bottom: 12px;
+}
+
+.services__extension-item-list li {
+  margin-bottom: 12px;
+}
+
+.services__extension-item-list li::before {
+  content: '-';
+  margin-right: 4px;
 }
 
 .services__wrapper {
