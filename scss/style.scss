@@ -358,6 +358,7 @@ a:focus {
     display: flex;
     flex-direction: row;
     max-width: 1010px;
+    height: 617px;
   }
   &__header {
     min-height: 551px; 
@@ -448,8 +449,8 @@ a:focus {
     color: #272B2C;
     border-color: #272B2C;
   }
-  &__tab-wrapper {
-    margin-top: 104px;
+  &__tab > img {
+    margin-bottom: 104px;
   }
   &__aservices-title {
     margin-top: 100px;
@@ -1069,6 +1070,20 @@ a:focus {
   top: 0;
   width: 100%;
   z-index: 7;
+}
+
+.up {
+  // display: none;
+  position: fixed;
+  bottom: 100px;
+  right: 50px;
+  width: 145px;
+  height: 50px;
+  z-index: 300;
+  padding: 0 2px;
+  cursor: pointer;
+  transition: 1s;
+  background-color: rgb(255 , 255, 255);
 }
 
 

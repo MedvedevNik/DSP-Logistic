@@ -1,6 +1,6 @@
 <?php
 
-$name = $_POST['user_name'];
+$name = $_POST['user_fio'];
 $phone = $_POST['user_phone'];
 $email = $_POST['user_email'];
 $message = $_POST['user_message'];
