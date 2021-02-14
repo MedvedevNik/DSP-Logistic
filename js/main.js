@@ -150,6 +150,10 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   const domListeners = () => {
+    const asCards = document.getElementById('as-cards');
+    const asCardsItems = asCards.querySelectorAll('.stocks__aservices-card');
+    console.log(asCardsItems);
+
     const handleHTMLclick = e => {
       const { target } = e;
 
@@ -160,6 +164,29 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     } // end handleHTMLclick
     document.querySelector('html').addEventListener('click', handleHTMLclick);
+    asCards.addEventListener('mouseover', e => {
+      const { target, relatedTarget } = e;
+
+      if (target.matches('.stocks__aservices-card')) {
+        console.log(target);
+        asCardsItems.forEach(card => {
+          if (card === target) {
+            console.log(card);
+            target.classList.add('active');
+          } else { target.classList.remove('active'); }
+        });
+        
+      }
+      
+    });
+    asCards.addEventListener('mouseout', e => {
+      const { target } = e;
+      // console.log('mouseout',target);
+      if (target.matches('.stocks__aservices-card')) {
+        // console.log('mouseout',target);
+        // target.classList.remove('active');
+      }
+    });
   }
 
   const sendForm = (selector) => {
