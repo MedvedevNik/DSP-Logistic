@@ -85,7 +85,7 @@ window.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
   
-            if (scrolled >= 900 && scrolled <= 7950) {
+            if (scrolled >= 900 && scrolled <= 9700) {
                 scrollUp.style.display = 'block';
             } else {
                 scrollUp.style.display = 'none';
