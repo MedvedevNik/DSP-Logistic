@@ -150,10 +150,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   const domListeners = () => {
-    const asCards = document.getElementById('as-cards');
-    const asCardsItems = asCards.querySelectorAll('.stocks__aservices-card');
-    console.log(asCardsItems);
-
     const handleHTMLclick = e => {
       const { target } = e;
 
@@ -164,33 +160,15 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     } // end handleHTMLclick
     document.querySelector('html').addEventListener('click', handleHTMLclick);
-    asCards.addEventListener('mouseover', e => {
-      const { target, relatedTarget } = e;
-
-      if (target.matches('.stocks__aservices-card')) {
-        console.log(target);
-        asCardsItems.forEach(card => {
-          if (card === target) {
-            console.log(card);
-            target.classList.add('active');
-          } else { target.classList.remove('active'); }
-        });
-        
-      }
-      
-    });
-    asCards.addEventListener('mouseout', e => {
-      const { target } = e;
-      // console.log('mouseout',target);
-      if (target.matches('.stocks__aservices-card')) {
-        // console.log('mouseout',target);
-        // target.classList.remove('active');
-      }
-    });
   }
 
   const sendForm = (selector) => {
     const form = document.querySelector(selector);
+    const popup = form.closest('#popup');
+    const loader = popup.querySelector('.loader');
+    const statusMsg = popup.querySelector('.message');
+    const orderContent = popup.querySelector('.order__content');
+
     const postData = data => fetch('./telegram.php', {
         method: 'POST',
         headers: {
@@ -201,7 +179,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const handlSubmit = e => {
         e.preventDefault();
-        // statusMsg.classList.add('active');
+        orderContent.classList.add('hidden');
+        loader.classList.add('active');
 
         const formData = new FormData(form);        
         const temp = [];
@@ -213,20 +192,29 @@ window.addEventListener('DOMContentLoaded', () => {
 
         postData(body)
             .then(response => {
-                // statusMsg.classList.remove('active');
-                if (response.status !== 200) { throw new Error('status network not 200'); }
-                console.log(response);
+              loader.classList.remove('active');
+              if (response.status !== 200) { throw new Error('status network not 200'); }
+              statusMsg.classList.add('active');
             })
             .catch(error => {
+                statusMsg.children[0].textContent = 'Что-то пошло не так...'
+                statusMsg.classList.add('active');
                 console.warn(error);
             })
             .finally(() => {
                 form.reset();
-                // statusMsg.classList.remove('active');
+                setTimeout(() => {
+                  popup.style.display = 'none';
+                  statusMsg.classList.remove('active');
+                  orderContent.classList.remove('hidden');
+                }, 6000);                
             });
     }; // end submitHandler
 
     form.addEventListener('submit', handlSubmit);
+    statusMsg.addEventListener('click', () => {
+      popup.style.display = 'none';
+    });
 };
 
 const toggleMenu = () => {
