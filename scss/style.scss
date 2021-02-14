@@ -498,7 +498,8 @@ a:focus {
       padding-top: 45px;
       padding-right: 16px;
       position: relative;
-      z-index: 0;
+      display: block;
+      z-index: 1;
 
       &:last-child {
         margin-right: 0;
@@ -509,6 +510,21 @@ a:focus {
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
+      }
+
+      &:hover &-content {
+        display: block;
+      }
+
+      &:hover &-title {
+        margin-top: 45px;
+        margin-bottom: 0;
+        
+      }
+
+      &:hover &-descr {
+        display: block;
+        margin-top: 44px;
       }
 
       &-title {
@@ -571,14 +587,20 @@ a:focus {
       }
 
       &-overlay {
-        display: none;
+        display: block;
         position: absolute;
         top: 0;
         left: 0;
-        bottom: 0;
-        right: 0;
+        width: 100%;
+        height: 100%;
         background: rgba(0, 0, 0, 0.7);
-        z-index: -1;
+        z-index: -2;
+        opacity: 0;
+      }
+
+      &-overlay:hover {
+        opacity: 0.7;
+        z-index: 4;
       }
 
       &.active {
