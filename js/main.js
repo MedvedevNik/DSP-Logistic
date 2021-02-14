@@ -237,10 +237,8 @@ const toggleMenu = () => {
 
     const activeMenu = () => {
       menu.classList.toggle('active-menu');
-      document.body.classList.toggle('overflowHidden')
+      document.body.classList.toggle('overflowHidden');
     };
-
-    console.log(target)
 
     if (target.closest('.menu') || (!target.closest('nav.nav-mobile') && menu.classList.contains('active-menu'))) {
       activeMenu();
