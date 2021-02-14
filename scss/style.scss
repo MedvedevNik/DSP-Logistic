@@ -1104,6 +1104,12 @@ a:focus {
   height: 100%;
   z-index: 100;
   background-color: rgba(0, 0, 0, .5);
+
+  &__form-body {
+    height: 400px;
+    overflow-y: auto;
+    padding: 0 1.5rem;
+  }
   &__input {
     background: #F5F5F5;
     max-width: 495px;
@@ -1183,7 +1189,7 @@ a:focus {
     z-index: 99;
     background: rgb(255, 255, 255);
     padding: 80px 128px 93px;
-    // min-height: 80vh;
+    max-height: 90vh;
   }
 
   .order__content {

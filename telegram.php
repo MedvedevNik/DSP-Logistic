@@ -2,7 +2,7 @@
 
 $name = $_POST['user_fio'];
 $phone = $_POST['user_phone'];
-$email = $_POST['exec_data'];
+$email = $_POST['exec_date'];
 $adress_start = $_POST['adress_start'];
 $adress_end = $_POST['adress_end'];
 $message = $_POST['user_message'];

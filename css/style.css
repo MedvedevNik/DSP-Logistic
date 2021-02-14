@@ -1255,6 +1255,12 @@ input[type=checkbox]:checked ~ .questions__item-inner {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.popup__form-body {
+  height: 400px;
+  overflow-y: auto;
+  padding: 0 1.5rem;
+}
+
 .popup__input {
   background: #F5F5F5;
   max-width: 495px;
@@ -1331,6 +1337,7 @@ input[type=checkbox]:checked ~ .questions__item-inner {
   z-index: 99;
   background: white;
   padding: 80px 128px 93px;
+  max-height: 90vh;
 }
 
 .popup .order__content.hidden {

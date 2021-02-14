@@ -110,6 +110,11 @@ window.addEventListener('DOMContentLoaded', () => {
         target.value = target.value.replace(/[^А-Яёа-яё ]/gi, '');
       }
 
+      if (target.name === 'adress_start' || target.name === 'adress_end') {
+        target.setAttribute('pattern', '[аА-яЯЁё0-9 .,-]');
+        target.value = target.value.replace(/[^а-я0-9\s.,-]/gi, '');
+      }
+
       if (target.matches('.popup__mess')) {
         target.value = target.value.replace(/[^А-ЯЁа-яё ,.?!]/gi, '');
       }
@@ -162,12 +167,19 @@ window.addEventListener('DOMContentLoaded', () => {
     document.querySelector('html').addEventListener('click', handleHTMLclick);
   }
 
+  const addZero = num => num > 10 ? `${num}` : `0${num}`; 
+
   const sendForm = (selector) => {
     const form = document.querySelector(selector);
     const popup = form.closest('#popup');
     const loader = popup.querySelector('.loader');
     const statusMsg = popup.querySelector('.message');
     const orderContent = popup.querySelector('.order__content');
+    const now = new Date();
+    const startDate =`${addZero(now.getFullYear())}-${addZero(now.getMonth() + 1)}-${addZero(now.getDate())}`;
+    let closeTimer = 0;
+
+    form['exec_date'].value = form['exec_date'].min = startDate;
 
     const postData = data => fetch('./telegram.php', {
         method: 'POST',
@@ -194,6 +206,7 @@ window.addEventListener('DOMContentLoaded', () => {
             .then(response => {
               loader.classList.remove('active');
               if (response.status !== 200) { throw new Error('status network not 200'); }
+              statusMsg.children[0].textContent = `Спасибо за заказ!<br>Скоро мы с Вами свяжемся`
               statusMsg.classList.add('active');
             })
             .catch(error => {
@@ -203,7 +216,7 @@ window.addEventListener('DOMContentLoaded', () => {
             })
             .finally(() => {
                 form.reset();
-                setTimeout(() => {
+                closeTimer = setTimeout(() => {
                   popup.style.display = 'none';
                   statusMsg.classList.remove('active');
                   orderContent.classList.remove('hidden');
@@ -213,7 +226,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
     form.addEventListener('submit', handlSubmit);
     statusMsg.addEventListener('click', () => {
+      clearTimeout(closeTimer);
       popup.style.display = 'none';
+      popup.style.display = 'none';
+      statusMsg.classList.remove('active');
+      orderContent.classList.remove('hidden');
     });
 };
 

@@ -817,28 +817,25 @@
           Заполните форму обратной связи и мы вам перезвоним в течении 30 минут.
         </p>
         <form class="popup__form" id="form" name="user_form">
-          <label class="popup__label" for="form-name">Ф.И.О заказчика</label>
+          <div class="popup__form-body">
+            <label class="popup__label" for="form-name">Ф.И.О заказчика</label>
           <input type="text" class="popup__name popup__input" id="form-name" name="user_fio" placeholder="Введите Ф.И.О." required />
           <label class="popup__label" for="form-phone">Телефон</label>
           <input type="tel" class="popup__phone popup__input" id="form-phone" name="user_phone"
             placeholder="+7(___)___-__-__" required />
           <label class="popup__label" for="exec_data">Дата выполнения заказа </label>
-          <input 
-            type="date" 
-            class="popup__input" 
-            id="exec_data" name="exec_data"
-            value="2021-02-14"
-            min="2021-02-14"
-            required />
+          <input type="date" class="popup__input" id="exec_date" name="exec_date" required />
           <label class="popup__label" for="adress_start">Адрес погрузки</label>
           <input id="adress_start" name="adress_start" type="text" class="popup__input" 
-            placeholder="Введите адрес погрузки"/>
+            placeholder="Введите адрес погрузки" required />
           <label class="popup__label" for="adress_end">Адрес разгрузки</label>
           <input id="adress_finish" name="adress_end" type="text" class="popup__input"
-            placeholder="Введите адрес разгрузки"/>
+            placeholder="Введите адрес разгрузки" required />
           <label class="popup__label" for="form2-message">Описание груза</label>
           <textarea class="popup__mess popup__textarea" id="form2-message" name="user_message"
           rows: "4" placeholder="Добавьте описание груза"></textarea>
+          </div>
+          <!-- /.popup__form-body -->          
           <div class="popup__text">
             <p class="popup__form-text">
               Нажимая на кнопку, вы подтверждаете согласие на обработку ваших
@@ -863,10 +860,7 @@
         </div>
       </div>
       <div class="message">
-        <h1 class="message__text">
-          Спасибо за заказ!<br>
-          Скоро мы с Вами свяжемся
-        </h1>
+        <h1 class="message__text"></h1>
         <button class="btn popup__form-btn message__btn" type="button">Закрыть</button>
         </form>
       </div>
