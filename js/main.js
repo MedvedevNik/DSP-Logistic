@@ -202,11 +202,35 @@ window.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', handlSubmit);
 };
 
+const toggleMenu = () => {
+  const menu = document.querySelector('nav.nav-mobile');
+
+  const handlerMenu = event => {
+    const target = event.target;
+
+    const activeMenu = () => {
+      menu.classList.toggle('active-menu');
+      document.body.classList.toggle('overflowHidden')
+    };
+
+    console.log(target)
+
+    if (target.closest('.menu') || (!target.closest('nav.nav-mobile') && menu.classList.contains('active-menu'))) {
+      activeMenu();
+    } else if (target.closest('.close') || (target.closest('nav.nav-mobile') && target.closest('[href^="#"]'))) {
+      activeMenu();
+    }
+  };
+
+  document.body.addEventListener('click', handlerMenu);
+};
+
 
 
   tabs('.stocks__pack-1');
   tabs('.stocks__pack-2');
   tabs('.stocks__pack-3');
+  toggleMenu();
   toTop();
   domListeners();
   falidation('.popup__form');

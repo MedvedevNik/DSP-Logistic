@@ -975,7 +975,7 @@ a:focus {
   bottom: 0;
   width: 100%;
   height: 100%;
-  z-index: 9;
+  z-index: 100;
   background-color: rgba(0, 0, 0, .5);
 
   &__input {
@@ -1088,9 +1088,74 @@ a:focus {
   right: 50px;
   width: 55px;
   height: 55px;
-  z-index: 300;
+  z-index: 99;
   cursor: pointer;
   background-color: rgb(255 , 255, 255);
+}
+
+
+.nav-mobile {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 101;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  opacity: .9;
+  background-color: #232220;
+  color: #fff;
+  &__close {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+  }
+  &__close span{
+    position: fixed;
+    top: 54px;
+    right: 30px;
+    width: 50px;
+    height: 0px;
+    transform: rotate(45deg);
+    border: 2px solid #fff;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+  }
+  &__close span:first-child{
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+}
+  &__list {
+    text-align: center;
+  }
+  &__list-item {
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 28px;
+
+    margin-bottom: 50px;
+  }
+  &__list-link {
+    cursor: pointer;
+  }
+}
+
+.overflowHidden {
+  overflow-y: hidden;
+}
+
+.active-menu {
+  display: flex;
+  overflow-y: hidden;
 }
 
 
