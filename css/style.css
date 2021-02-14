@@ -69,19 +69,8 @@ a:focus {
   margin: 0 auto;
 }
 
-.mobile-menu {
-  position: fixed;
-  top: 0px;
-  right: -400px;
-  height: 100%;
-  width: 370px;
-  max-width: 100%;
-  z-index: 1000;
-  overflow-y: scroll;
-  padding-top: 20px;
-  background: #21282e;
-  -webkit-transition: all 200ms ease-out 0s;
-  transition: all 200ms ease-out 0s;
+.nav__mobile {
+  display: none;
 }
 
 .header {
@@ -105,33 +94,40 @@ a:focus {
           align-items: center;
 }
 
-.nav__list-item {
+.header .nav__list-item {
   display: inline-block;
 }
 
-.nav__list li + li {
+.header .nav__list li + li {
   padding-left: 10px;
 }
 
-.nav__list-link {
+.header .nav__list-link {
   font-weight: 600;
   color: #9b9b9b;
   padding: 16px 15px;
 }
 
-.nav__list-link:hover {
+.header .nav__list-link:hover {
   color: #69A4A2;
 }
 
-.nav__list-link:focus {
+.header .nav__list-link:focus {
   color: #fff;
   padding: 16px 15px;
   background-color: #69A4A2;
   border-radius: 4px;
 }
 
-.social {
+.header .contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header .contacts .social {
   padding-right: 30px;
+  margin-right: 30px;
   height: 52px;
   border-right: 1px solid #CFCFCF;
   -webkit-box-align: center;
@@ -139,23 +135,23 @@ a:focus {
           align-items: center;
 }
 
-.social__links:first-child {
+.header .contacts .social__links:first-child {
   margin-right: 25px;
 }
 
-.social__links:hover {
+.header .contacts .social__links:hover {
   text-decoration: none;
 }
 
-.social__links-img {
+.header .contacts .social__links-img {
   margin-top: 11px;
 }
 
-.social__links-img:hover {
+.header .contacts .social__links-img:hover {
   opacity: .5;
 }
 
-.contact {
+.header .contacts .contact {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -168,7 +164,7 @@ a:focus {
           align-items: center;
 }
 
-.contact__phone {
+.header .contacts .contact__phone {
   margin-left: 7px;
   font-weight: bold;
   font-size: 20px;
@@ -177,8 +173,15 @@ a:focus {
   color: #69A4A2;
 }
 
-.contact__phone:hover {
+.header .contacts .contact__phone:hover {
   color: #2f2f2f;
+}
+
+.header .menu {
+  display: none;
+  width: 28px;
+  height: 18px;
+  cursor: pointer;
 }
 
 .main {
@@ -208,7 +211,7 @@ a:focus {
   color: #fff;
   font-style: normal;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 20px;
   letter-spacing: 0.03em;
   margin-bottom: 40px;
@@ -349,7 +352,7 @@ a:focus {
 
 .about__bottom-img {
   position: absolute;
-  top: 1070px;
+  top: 64%;
   right: 0;
   z-index: 4;
 }
@@ -405,13 +408,13 @@ a:focus {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  max-width: 1010px;
-  height: 617px;
+  max-width: 900px;
+  min-height: 617px;
 }
 
 .stocks__header {
   min-height: 551px;
-  min-width: 330px;
+  min-width: 30%;
   padding-left: 40px;
   background-color: #272b2c;
   display: -webkit-box;
@@ -443,8 +446,8 @@ a:focus {
   display: block;
   background-color: #fff;
   padding-top: 38px;
-  padding-left: 55px;
-  padding-right: 105px;
+  padding-left: 9%;
+  padding-right: 10%;
 }
 
 .stocks__tab.d-none {
@@ -871,6 +874,7 @@ input[type=checkbox]:checked ~ .services__item-first {
 
 .why__img {
   z-index: 1;
+  width: 45%;
 }
 
 .why__top-img {
@@ -1243,5 +1247,337 @@ input[type=checkbox]:checked ~ .questions__item-inner {
   }
   .about__central {
     margin-right: 8%;
+  }
+}
+
+@media (max-width: 1440px) {
+  body {
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.03em;
+  }
+  .sticks__title,
+  .about__text-title,
+  .services__title,
+  .stocks__title,
+  .why__title,
+  .reviews__title,
+  .popup__title,
+  .questions__title {
+    font-size: 50px;
+    line-height: 70px;
+  }
+  .nav__list-link {
+    font-size: 14px;
+  }
+  .social {
+    padding-right: 20px;
+  }
+  .social__links:first-child {
+    margin-right: 15px;
+  }
+  .contact__phone {
+    font-size: 18px;
+  }
+  .about__top .about__text {
+    padding-top: 0;
+  }
+  .about__central {
+    margin-bottom: 15%;
+  }
+  .about__central-img {
+    top: 20%;
+  }
+  .about__bottom-img {
+    top: 58%;
+  }
+  .stocks__header {
+    min-width: 270px;
+  }
+  .stocks__packet-tab {
+    left: 20%;
+  }
+  .services__item-text {
+    font-size: 24px;
+    line-height: 26px;
+  }
+  .services__item-title {
+    font-size: 18px;
+    line-height: 20px;
+  }
+  .services__wrapper-cost {
+    font-size: 24px;
+  }
+  .why__text-title {
+    font-size: 24px;
+    line-height: 26px;
+  }
+  .why__text {
+    padding: 35px;
+  }
+  .why__bottom-img {
+    bottom: -10px;
+  }
+  .questions__title, .questions__description {
+    text-align: left;
+  }
+  .questions__title:after {
+    left: 0;
+    right: auto;
+  }
+  .questions__item-title {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 1340px) {
+  .header .nav {
+    display: none;
+  }
+  .header .menu {
+    display: block;
+  }
+  .about__img {
+    max-width: 40%;
+  }
+  .about__top {
+    margin-bottom: 5%;
+  }
+  .about__central {
+    margin-right: 3%;
+  }
+  .about__central-img {
+    top: 25%;
+  }
+  .about__text {
+    padding-top: 45px;
+  }
+  .stocks__packet-tab {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: relative;
+    left: 0;
+    top: 0;
+    margin-top: 2%;
+    max-width: 100%;
+  }
+  .stocks__header ul {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+  }
+  .stocks__packet-img {
+    width: 100%;
+  }
+  .stocks__header {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    min-height: 89px;
+  }
+  .stocks__header ul {
+    margin-top: 25px;
+    margin-left: 25px;
+  }
+  .stocks__title-tab {
+    margin-top: 0;
+    margin-right: 25px;
+    margin-left: 0;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .stocks__tab-item {
+    max-width: 150px;
+  }
+  .stocks__tab {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .stocks__tab > img {
+    width: 100%;
+  }
+  .stocks__tab-text {
+    max-width: 518px;
+  }
+  .services__extension-item {
+    padding: 16px 10px;
+    margin-right: 15px;
+    max-width: 30%;
+    line-height: 20px;
+    font-size: 14px;
+  }
+  .why__top {
+    max-width: 55%;
+    margin-left: 0;
+    margin-bottom: 500px;
+  }
+  .why__top-img {
+    top: 12%;
+    width: 70%;
+  }
+  .why__text {
+    padding: 0;
+    width: 81%;
+  }
+  .why__center {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+  .why__center-img {
+    position: relative;
+    width: 80%;
+  }
+  .why__bottom {
+    position: relative;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 400px;
+    max-width: 400px;
+  }
+  .why__bottom-img {
+    top: 109%;
+    width: 110%;
+  }
+  .questions {
+    margin-bottom: 200px;
+  }
+  .footer__wrapper {
+    margin: 0;
+  }
+}
+
+@media (max-width: 950px) {
+  body {
+    line-height: 18px;
+  }
+  .container {
+    padding: 0px 100px;
+  }
+  .main {
+    min-height: 785px;
+  }
+  .main__title {
+    font-size: 60px;
+    line-height: 74px;
+  }
+  .main__subtitle {
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .about {
+    margin-bottom: 0;
+  }
+  .about__text {
+    padding-top: 0;
+    max-width: 90%;
+  }
+  .about__text-description, .about__central-description, .about__bottom-description {
+    max-width: 340px;
+  }
+  .about__top {
+    max-width: 355px;
+  }
+  .about__top-img {
+    top: 12%;
+  }
+  .about__central-img {
+    top: 28%;
+  }
+  .about__bottom-img {
+    top: 64%;
+  }
+  .about__central {
+    max-width: 50%;
+    margin-right: 0;
+    margin-top: 70px;
+  }
+  .stocks {
+    padding-top: 0;
+  }
+  .stocks__header {
+    padding-left: 0;
+  }
+  .stocks__tab {
+    margin-top: 10px;
+    -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+  }
+  .stocks__title-tab {
+    margin-right: 45px;
+  }
+  .stocks__title-tab:first-child {
+    margin-bottom: 15px;
+  }
+  .stocks__title-tab:nth-child(even) {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .stocks__header ul {
+    margin-left: 45px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    max-height: 120px;
+  }
+  .services__wrapper-text {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .services__wrapper-subtitle {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .services__wrapper-cost {
+    font-size: 18px;
+    line-height: 20px;
+  }
+  .services__extension-items {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .services__extension-item.second {
+    margin-right: 0;
+  }
+  .services__extension-item {
+    max-width: 46%;
+  }
+  .services__extension-item-title {
+    line-height: 22px;
+  }
+  .services__extension-btn {
+    margin-top: 30px;
+    width: 100%;
+  }
+  .services__item-link {
+    width: 100%;
+    margin-top: 30px;
+  }
+  input[type=checkbox]:checked ~ .services__item-inner {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .why__top {
+    margin-bottom: 325px;
+  }
+  .why__bottom {
+    margin-bottom: 250px;
+  }
+  .questions {
+    margin-bottom: 150px;
+  }
+  .questions__item-title {
+    font-size: 18px;
+    line-height: 20px;
+    max-width: 450px;
   }
 }
