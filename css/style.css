@@ -1285,6 +1285,30 @@ input[type=checkbox]:checked ~ .questions__item-inner {
   padding: 18px 24px 18px 24px;
 }
 
+.popup__input-date {
+  position: relative;
+}
+
+.popup__input-date::-webkit-calendar-picker-indicator {
+  color: transparent;
+  background: none;
+  z-index: 1;
+}
+
+.popup__input-date:before {
+  color: transparent;
+  background: none;
+  display: block;
+  font-family: 'FontAwesome';
+  content: '\f073';
+  width: 15px;
+  height: 20px;
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  color: #999;
+}
+
 .popup__input:focus, .popup__textarea:focus {
   outline: none;
 }
