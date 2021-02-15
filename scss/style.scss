@@ -490,9 +490,8 @@ a:focus {
     }
 
     &-card {
-      $parent: &;
       height: 420px;
-      margin-right: 20px;
+      margin-right: 25px;
       padding-left: 40px;
       padding-bottom: 40px;
       padding-top: 45px;
@@ -501,30 +500,11 @@ a:focus {
       display: block;
       z-index: 1;
 
-      &:last-child {
-        margin-right: 0;
-      }
-
       &-content {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
-      }
-
-      &:hover &-content {
-        display: block;
-      }
-
-      &:hover &-title {
-        margin-top: 45px;
-        margin-bottom: 0;
-        
-      }
-
-      &:hover &-descr {
-        display: block;
-        margin-top: 44px;
       }
 
       &-title {
@@ -535,6 +515,7 @@ a:focus {
         color: #FFFFFF;
         margin-top: auto;
         margin-bottom: 0;
+        height: 140px;
       }
 
       &-descr {
@@ -544,7 +525,6 @@ a:focus {
         line-height: 25px;
         letter-spacing: 0.03em;
         color: #FFFFFF;
-        // margin-bottom: 148px;
       }
 
       & .btn__more {
@@ -571,22 +551,25 @@ a:focus {
         background: #ffffff url(../img/aserv-1.jpg) no-repeat center;
         background-size: cover;
         object-fit: cover;
-        flex-basis: 100%;
+        flex-basis: 45.5%;
       }
 
       &.card-two {
         background: #ffffff url(../img/aserv-2.jpg) no-repeat center;
         background-size: cover;
         object-fit: cover;
+        flex-basis: 24.5%;
       }
 
       &.card-three {
         background: #ffffff url(../img/aserve-3.png) no-repeat center;
         background-size: cover;
         object-fit: cover;
+        flex-basis: 24.5%;
       }
 
-      &-overlay {
+
+      &:hover &-content {
         display: block;
         position: absolute;
         top: 0;
@@ -594,28 +577,32 @@ a:focus {
         width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 0.7);
-        z-index: -2;
-        opacity: 0;
+        z-index: 1;
+        padding-left: 40px;
+        padding-bottom: 40px;
+        padding-top: 45px;
+        padding-right: 16px;
       }
 
-      &-overlay:hover {
-        opacity: 0.7;
-        z-index: 4;
+      &:hover &-title {
+        margin-bottom: 0;
+        z-index: 3;
       }
 
-      &.active {
-        #{$parent}-overlay {
-          display: block;
-        }
+      &:hover &-descr {
+        display: block;
+        z-index: 3;
+      }
 
-        #{$parent}-title {
-          margin: 45px 0 0 0;
-        }
+      &:hover .btn__more{
+        display: block;
+        margin-top: 88px;
+        z-index: 3;
+      }
 
-        #{$parent}-descr,
-        .btn__more {
-          display: block;
-        }
+      &:hover.card-two .btn__more,
+      &:hover.card-three .btn__more{
+        margin-top: 62px;
       }
     }
   }
@@ -1389,6 +1376,39 @@ a:focus {
     &__packet-tab {
       left: 20%;
     }
+    &__aservices-card {
+      height: 540px;
+      padding-left: 15px;
+    }
+    &__aservices-card.card-one {
+      flex-basis: 33.33%;
+    }
+    &__aservices-card-title {
+      line-height: 25px;
+    }
+    &__aservices-card-descr {
+      margin-top: 50px;
+    }
+    &__aservices-card:hover &__aservices-card-content {
+      padding-left: 15px;
+    }
+    &__aservices-card:hover.card-one  .btn__more {
+      margin-top: 148px;
+    }
+    &__aservices-card:hover.card-two  &__aservices-card-title,
+    &__aservices-card:hover.card-three  &__aservices-card-title{
+      height: 140px;
+    }
+    &__aservices-card:hover.card-two  .btn__more,
+    &__aservices-card:hover.card-three  .btn__more{
+      margin-top: 148px;
+    }
+    &__aservices-card.card-two {
+      flex-basis: 33.33%;
+    }
+    &__aservices-card.card-three {
+      flex-basis: 33.33%;
+    }
   }
 
   .services {
@@ -1401,6 +1421,7 @@ a:focus {
       line-height: 20px;
     }
     &__wrapper-cost {
+      margin-top: -20px;
       font-size: 24px;
     }
   }
@@ -1472,18 +1493,22 @@ a:focus {
       max-width: 100%;
     }
     &__header ul {
-      display: inline-flex;
+      display: flex;
+      justify-content: center;
     }
     &__packet-img {
       width: 100%;
     }
     &__header {
       flex-direction: row;
+      justify-content: center;
       min-height: 89px;
+      padding-left: 0;
     }
     &__header ul {
-      margin-top: 25px;
-      margin-left: 25px;
+      margin-left: 0;
+      
+      align-items: flex-end;
     }
     &__title-tab {
       margin-top: 0;
@@ -1491,6 +1516,7 @@ a:focus {
       margin-left: 0;
       font-size: 14px;
       line-height: 18px;
+      padding-bottom: 10px;
     }
     &__tab-item {
       max-width: 150px;
@@ -1572,6 +1598,18 @@ a:focus {
     padding: 0px 100px;
   }
 
+  .header {
+    .contacts {
+      .social {
+        margin-right: 20px;
+        padding-right: 20px;
+      }
+      .social__links:first-child {
+        margin-right: 20px;
+      }
+    }
+  }
+
   .main {
     min-height: 785px;
     &__title {
@@ -1615,8 +1653,11 @@ a:focus {
 
   .stocks {
     padding-top: 0;
+    margin-bottom: 0;
     &__header {
       padding-left: 0;
+      justify-content: center;
+      padding-right: 115px;
     }
     &__tab {
       padding: 25px;
@@ -1625,33 +1666,87 @@ a:focus {
     }
     &__title-tab {
       margin-right: 45px;
+      padding-bottom: 0;
     }
     &__title-tab:first-child {
       margin-bottom: 15px;
     }
     &__title-tab:nth-child(even) {
-      margin-top: 15px;
+      margin-top: 16px;
       margin-bottom: 15px;
     }
     &__header ul {
-      margin-left: 45px;
+      margin-top: 20px;
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
+      align-items: flex-start;
       max-height: 120px;
     }
-    &__header-2 {
-      min-height: 90px;
+    &__header-2.stocks__header {
+      min-height: 55px;
+    }
+    &__header-2  {
+      padding-right: 0;
     }
     &__header-2 ul {
+      flex-direction: row;
+      align-items: flex-end;
+    }
+    &__header-2 ul,
+    &__header-3 ul {
       max-height: 90px;
     }
     &__header-2 &__title-tab:nth-child(odd) {
+      margin-bottom: 0;
+    }
+    &__header-3 &__title-tab:nth-child(odd) {
       margin-bottom: 15px;
     }
     &__header-2 &__title-tab:nth-child(even) {
+      margin-top: 0;
       margin-bottom: 0;
     }
+    &__header-3 &__title-tab:nth-child(even) {
+      margin-bottom: 0;
+    }
+    &__aservices-cards {
+      flex-wrap: wrap;
+    }
+    &__aservices-card {
+      height: 310px;
+      margin-right: 0;
+      margin-bottom: 25px;
+    }
+    &__aservices-card-title {
+      height: 55px;
+    }
+    &__aservices-card:hover.card-one  &__aservices-card-title,
+    &__aservices-card:hover.card-two  &__aservices-card-title,
+    &__aservices-card:hover.card-three  &__aservices-card-title {
+      height: 55px;
+      width: 526px;
+    }
+    &__aservices-card:hover.card-one &__aservices-card-descr,
+    &__aservices-card:hover.card-two &__aservices-card-descr,
+    &__aservices-card:hover.card-three &__aservices-card-descr {
+      margin-top: 40px;
+    }
+    &__aservices-card:hover.card-one .btn__more,
+    &__aservices-card:hover.card-two .btn__more,
+    &__aservices-card:hover.card-three .btn__more {
+      margin-top: 40px;
+    }
+    &__aservices-card.card-one {
+      flex-basis: 100%;
+    }
+    &__aservices-card.card-two {
+      flex-basis: 100%;
+    }
+    &__aservices-card.card-three {
+      flex-basis: 100%;
+    }
+
   }
 
   .services {
@@ -1707,6 +1802,311 @@ a:focus {
       font-size: 18px;
       line-height: 20px;
       max-width: 450px;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+
+  body {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+
+  .sticks__title,
+  .about__text-title,
+  .services__title,
+  .stocks__title,
+  .why__title,
+  .reviews__title,
+  .popup__title,
+  .questions__title {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .container {
+    padding: 0px 50px;
+  }
+
+  .header {
+    .logo__link {
+      width: 100px;
+    }
+    .contacts {
+      .social {
+        display: none;
+      }
+      .contact__img {
+        width: 30px;
+      }
+      .contact__phone {
+        font-size: 16px;
+        line-height: 18px;
+      }
+    }
+  }
+
+  .main {
+    min-height: 650px;
+    &__inner {
+      padding-top: 210px;
+    }
+    &__title {
+      font-size: 40px;
+      line-height: 40px;
+      margin-bottom: 28px;
+    }
+    &__subtitle {
+      font-size: 14px;
+      line-height: 17px;
+    }
+    &__btn {
+      width: 100%;
+    }
+  }
+
+  .about {
+    padding-top: 100px;
+    &__text-title::after {
+      left: 0px;
+      top: 40px;
+    }
+
+    &__text-description,
+    &__central-description,
+    &__bottom-description {
+      max-width: 291px;
+    }
+    &__top-img {
+      margin-top: 40px;
+      position: relative;
+      max-width: 100%;
+    }
+    &__central {
+      max-width: 100%;
+      margin-left: 0;
+      margin-top: 40px;
+    }
+    &__central-img {
+      position: relative;
+      margin-top: 40px;
+      max-width: 100%;
+    }
+    &__bottom {
+      padding-bottom: 100px;
+    }
+    &__text {
+      max-width: 100%;
+    }
+    &__bottom-img {
+      max-width: 100%;
+      position: relative;
+      margin-top: 40px;
+    }
+  }
+
+  .stocks {
+    &__title::after {
+      left: 0px;
+      top: 40px;
+    }
+    &__packet {
+      margin-bottom: 100px;
+    }
+
+    &__packet-title {
+      font-size: 20px;
+      line-height: 30px;
+    }
+    &__header-1 &__title-tab {
+      font-size: 12px;
+      line-height: 16px;
+      margin-right: 0px;
+    }
+    &__tab-item {
+      max-width: 135px;
+    }
+    &__tab > img {
+      margin-bottom: 60px;
+    }
+    &__item-link {
+      margin-top: 20px;
+      display: block;
+      float: none;
+    }
+    &__header-2 &__title-tab {
+      margin-right: 15px;
+    }
+    &__header-3 {
+      padding-right: 65px;
+    }
+    &__pack-3 {
+      margin-bottom: 0;
+    }
+    &__additional {
+      margin-top: 100px;
+      padding: 17px 22px;
+    }
+    &__additional::after {
+      right: -15px;
+      padding: 4px 10px;
+    }
+    &__aservices-title {
+      font-size: 20px;
+      line-height: 30px;
+    }
+    &__aservices-subtitle {
+      font-size: 14px;
+      line-height: 24px;
+    }
+    &__aservices-card-title {
+      font-size: 16px;
+      line-height: 18px;
+      height: 80px;
+      max-width: 215px;
+    }
+    &__aservices-card-descr {
+      font-size: 14px;
+      line-height: 16px;
+    }
+    &__aservices-card:hover.card-one .btn__more, 
+    &__aservices-card:hover.card-two .btn__more, 
+    &__aservices-card:hover.card-three .btn__more {
+      max-width: 100%;
+    }
+  }
+
+  .services {
+    padding-top: 100px;
+    &__title::after {
+      left: 0px;
+      top: 40px;
+    }
+    &__text {
+      padding-bottom: 45px;
+    }
+    &__item-text {
+      font-size: 14px;
+      line-height: 22px;
+    }
+    input[type=checkbox]:checked ~ &__item-inner {
+      font-size: 14px;
+      line-height: 16px;
+    }
+    &__wrapper-text {
+      font-size: 12px;
+      line-height: 16px;
+    }
+    &__wrapper-text p {
+      display: inline-block;
+      max-width: 182px;
+    }
+    &__wrapper-cost {
+      margin-top: 15px;
+      font-size: 12px;
+      line-height: 16px;
+    }
+    &__item-title {
+      font-size: 12px;
+      line-height: 22px;
+      max-width: 185px;
+    }
+    &__wrapper-subtitle {
+      font-size: 12px;
+      line-height: 16px;
+    }
+    &__extension-item {
+      margin-right: 0;
+      margin-bottom: 20px;
+      max-width: 100%;
+      line-height: 16px;
+      font-size: 12px;
+    }
+  }
+  
+  .why {
+    padding-top: 100px;
+    margin-bottom: 100px;
+    &__title::after {
+      left: 0px;
+      top: 40px;
+    }
+    &__inner {
+      margin-top: 50px;
+    }
+    &__top {
+      margin-right: 0;
+      max-width: 100%;
+      margin-bottom: 250px;
+    }
+    &__top-img {
+      top: 15%;
+      width: 100%;
+    }
+    &__text {
+      width: 100%;
+    }
+    &__center-img {
+      width: 100%;
+    }
+    &__bottom-img {
+      top: 105%;
+      width: 100%;
+    }
+  }
+  
+  .questions {
+    padding-top: 100px;
+    &__title::after {
+      left: 0px;
+      top: 40px;
+    }
+    &__items {
+      margin-top: 40px;
+    }
+    &__item-title {
+      font-size: 14px;
+      line-height: 22px;
+      max-width: 230px;
+    }
+    &__item-text {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+
+  .footer {
+    &__wrapper {
+      flex-direction: column;
+      max-height: 315px;
+    }
+    &__link {
+      font-size: 13px;
+      line-height: 16px;
+    }
+    &__text {
+      font-size: 13px;
+      line-height: 16px;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  body {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+  }
+
+  .container {
+    padding: 0px 25px;
+  }
+
+  .header {
+    .contacts {
+      display: none;
     }
   }
 }

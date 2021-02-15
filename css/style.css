@@ -554,7 +554,7 @@ a:focus {
 
 .stocks__aservices-card {
   height: 420px;
-  margin-right: 20px;
+  margin-right: 25px;
   padding-left: 40px;
   padding-bottom: 40px;
   padding-top: 45px;
@@ -562,10 +562,6 @@ a:focus {
   position: relative;
   display: block;
   z-index: 1;
-}
-
-.stocks__aservices-card:last-child {
-  margin-right: 0;
 }
 
 .stocks__aservices-card-content {
@@ -582,20 +578,6 @@ a:focus {
   height: 100%;
 }
 
-.stocks__aservices-card:hover .stocks__aservices-card-content {
-  display: block;
-}
-
-.stocks__aservices-card:hover .stocks__aservices-card-title {
-  margin-top: 45px;
-  margin-bottom: 0;
-}
-
-.stocks__aservices-card:hover .stocks__aservices-card-descr {
-  display: block;
-  margin-top: 44px;
-}
-
 .stocks__aservices-card-title {
   font-weight: bold;
   font-size: 23px;
@@ -604,6 +586,7 @@ a:focus {
   color: #FFFFFF;
   margin-top: auto;
   margin-bottom: 0;
+  height: 140px;
 }
 
 .stocks__aservices-card-descr {
@@ -641,8 +624,8 @@ a:focus {
   background-size: cover;
   -o-object-fit: cover;
      object-fit: cover;
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
+  -ms-flex-preferred-size: 45.5%;
+      flex-basis: 45.5%;
 }
 
 .stocks__aservices-card.card-two {
@@ -650,6 +633,8 @@ a:focus {
   background-size: cover;
   -o-object-fit: cover;
      object-fit: cover;
+  -ms-flex-preferred-size: 24.5%;
+      flex-basis: 24.5%;
 }
 
 .stocks__aservices-card.card-three {
@@ -657,9 +642,11 @@ a:focus {
   background-size: cover;
   -o-object-fit: cover;
      object-fit: cover;
+  -ms-flex-preferred-size: 24.5%;
+      flex-basis: 24.5%;
 }
 
-.stocks__aservices-card-overlay {
+.stocks__aservices-card:hover .stocks__aservices-card-content {
   display: block;
   position: absolute;
   top: 0;
@@ -667,26 +654,32 @@ a:focus {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
-  z-index: -2;
-  opacity: 0;
+  z-index: 1;
+  padding-left: 40px;
+  padding-bottom: 40px;
+  padding-top: 45px;
+  padding-right: 16px;
 }
 
-.stocks__aservices-card-overlay:hover {
-  opacity: 0.7;
-  z-index: 4;
+.stocks__aservices-card:hover .stocks__aservices-card-title {
+  margin-bottom: 0;
+  z-index: 3;
 }
 
-.stocks__aservices-card.active .stocks__aservices-card-overlay {
+.stocks__aservices-card:hover .stocks__aservices-card-descr {
   display: block;
+  z-index: 3;
 }
 
-.stocks__aservices-card.active .stocks__aservices-card-title {
-  margin: 45px 0 0 0;
-}
-
-.stocks__aservices-card.active .stocks__aservices-card-descr,
-.stocks__aservices-card.active .btn__more {
+.stocks__aservices-card:hover .btn__more {
   display: block;
+  margin-top: 88px;
+  z-index: 3;
+}
+
+.stocks__aservices-card:hover.card-two .btn__more,
+.stocks__aservices-card:hover.card-three .btn__more {
+  margin-top: 62px;
 }
 
 .stocks__tab-subtitle span {
@@ -1530,6 +1523,42 @@ input[type=checkbox]:checked ~ .questions__item-inner {
   .stocks__packet-tab {
     left: 20%;
   }
+  .stocks__aservices-card {
+    height: 540px;
+    padding-left: 15px;
+  }
+  .stocks__aservices-card.card-one {
+    -ms-flex-preferred-size: 33.33%;
+        flex-basis: 33.33%;
+  }
+  .stocks__aservices-card-title {
+    line-height: 25px;
+  }
+  .stocks__aservices-card-descr {
+    margin-top: 50px;
+  }
+  .stocks__aservices-card:hover .stocks__aservices-card-content {
+    padding-left: 15px;
+  }
+  .stocks__aservices-card:hover.card-one .btn__more {
+    margin-top: 148px;
+  }
+  .stocks__aservices-card:hover.card-two .stocks__aservices-card-title,
+  .stocks__aservices-card:hover.card-three .stocks__aservices-card-title {
+    height: 140px;
+  }
+  .stocks__aservices-card:hover.card-two .btn__more,
+  .stocks__aservices-card:hover.card-three .btn__more {
+    margin-top: 148px;
+  }
+  .stocks__aservices-card.card-two {
+    -ms-flex-preferred-size: 33.33%;
+        flex-basis: 33.33%;
+  }
+  .stocks__aservices-card.card-three {
+    -ms-flex-preferred-size: 33.33%;
+        flex-basis: 33.33%;
+  }
   .services__item-text {
     font-size: 24px;
     line-height: 26px;
@@ -1539,6 +1568,7 @@ input[type=checkbox]:checked ~ .questions__item-inner {
     line-height: 20px;
   }
   .services__wrapper-cost {
+    margin-top: -20px;
     font-size: 24px;
   }
   .why__text-title {
@@ -1598,9 +1628,12 @@ input[type=checkbox]:checked ~ .questions__item-inner {
     max-width: 100%;
   }
   .stocks__header ul {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .stocks__packet-img {
     width: 100%;
@@ -1610,11 +1643,17 @@ input[type=checkbox]:checked ~ .questions__item-inner {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     min-height: 89px;
+    padding-left: 0;
   }
   .stocks__header ul {
-    margin-top: 25px;
-    margin-left: 25px;
+    margin-left: 0;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
   }
   .stocks__title-tab {
     margin-top: 0;
@@ -1622,6 +1661,7 @@ input[type=checkbox]:checked ~ .questions__item-inner {
     margin-left: 0;
     font-size: 14px;
     line-height: 18px;
+    padding-bottom: 10px;
   }
   .stocks__tab-item {
     max-width: 150px;
@@ -1690,6 +1730,13 @@ input[type=checkbox]:checked ~ .questions__item-inner {
   .container {
     padding: 0px 100px;
   }
+  .header .contacts .social {
+    margin-right: 20px;
+    padding-right: 20px;
+  }
+  .header .contacts .social__links:first-child {
+    margin-right: 20px;
+  }
   .main {
     min-height: 785px;
   }
@@ -1730,9 +1777,14 @@ input[type=checkbox]:checked ~ .questions__item-inner {
   }
   .stocks {
     padding-top: 0;
+    margin-bottom: 0;
   }
   .stocks__header {
     padding-left: 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-right: 115px;
   }
   .stocks__tab {
     padding: 25px;
@@ -1742,16 +1794,17 @@ input[type=checkbox]:checked ~ .questions__item-inner {
   }
   .stocks__title-tab {
     margin-right: 45px;
+    padding-bottom: 0;
   }
   .stocks__title-tab:first-child {
     margin-bottom: 15px;
   }
   .stocks__title-tab:nth-child(even) {
-    margin-top: 15px;
+    margin-top: 16px;
     margin-bottom: 15px;
   }
   .stocks__header ul {
-    margin-left: 45px;
+    margin-top: 20px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1761,19 +1814,82 @@ input[type=checkbox]:checked ~ .questions__item-inner {
             flex-direction: column;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     max-height: 120px;
   }
+  .stocks__header-2.stocks__header {
+    min-height: 55px;
+  }
   .stocks__header-2 {
-    min-height: 90px;
+    padding-right: 0;
   }
   .stocks__header-2 ul {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  .stocks__header-2 ul,
+  .stocks__header-3 ul {
     max-height: 90px;
   }
   .stocks__header-2 .stocks__title-tab:nth-child(odd) {
+    margin-bottom: 0;
+  }
+  .stocks__header-3 .stocks__title-tab:nth-child(odd) {
     margin-bottom: 15px;
   }
   .stocks__header-2 .stocks__title-tab:nth-child(even) {
+    margin-top: 0;
     margin-bottom: 0;
+  }
+  .stocks__header-3 .stocks__title-tab:nth-child(even) {
+    margin-bottom: 0;
+  }
+  .stocks__aservices-cards {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .stocks__aservices-card {
+    height: 310px;
+    margin-right: 0;
+    margin-bottom: 25px;
+  }
+  .stocks__aservices-card-title {
+    height: 55px;
+  }
+  .stocks__aservices-card:hover.card-one .stocks__aservices-card-title,
+  .stocks__aservices-card:hover.card-two .stocks__aservices-card-title,
+  .stocks__aservices-card:hover.card-three .stocks__aservices-card-title {
+    height: 55px;
+    width: 526px;
+  }
+  .stocks__aservices-card:hover.card-one .stocks__aservices-card-descr,
+  .stocks__aservices-card:hover.card-two .stocks__aservices-card-descr,
+  .stocks__aservices-card:hover.card-three .stocks__aservices-card-descr {
+    margin-top: 40px;
+  }
+  .stocks__aservices-card:hover.card-one .btn__more,
+  .stocks__aservices-card:hover.card-two .btn__more,
+  .stocks__aservices-card:hover.card-three .btn__more {
+    margin-top: 40px;
+  }
+  .stocks__aservices-card.card-one {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  .stocks__aservices-card.card-two {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  .stocks__aservices-card.card-three {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
   }
   .services__wrapper-text {
     font-size: 14px;
@@ -1825,5 +1941,286 @@ input[type=checkbox]:checked ~ .questions__item-inner {
     font-size: 18px;
     line-height: 20px;
     max-width: 450px;
+  }
+}
+
+@media (max-width: 750px) {
+  body {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+  .sticks__title,
+  .about__text-title,
+  .services__title,
+  .stocks__title,
+  .why__title,
+  .reviews__title,
+  .popup__title,
+  .questions__title {
+    font-size: 30px;
+    line-height: 36px;
+  }
+  .container {
+    padding: 0px 50px;
+  }
+  .header .logo__link {
+    width: 100px;
+  }
+  .header .contacts .social {
+    display: none;
+  }
+  .header .contacts .contact__img {
+    width: 30px;
+  }
+  .header .contacts .contact__phone {
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .main {
+    min-height: 650px;
+  }
+  .main__inner {
+    padding-top: 210px;
+  }
+  .main__title {
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 28px;
+  }
+  .main__subtitle {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .main__btn {
+    width: 100%;
+  }
+  .about {
+    padding-top: 100px;
+  }
+  .about__text-title::after {
+    left: 0px;
+    top: 40px;
+  }
+  .about__text-description, .about__central-description, .about__bottom-description {
+    max-width: 291px;
+  }
+  .about__top-img {
+    margin-top: 40px;
+    position: relative;
+    max-width: 100%;
+  }
+  .about__central {
+    max-width: 100%;
+    margin-left: 0;
+    margin-top: 40px;
+  }
+  .about__central-img {
+    position: relative;
+    margin-top: 40px;
+    max-width: 100%;
+  }
+  .about__bottom {
+    padding-bottom: 100px;
+  }
+  .about__text {
+    max-width: 100%;
+  }
+  .about__bottom-img {
+    max-width: 100%;
+    position: relative;
+    margin-top: 40px;
+  }
+  .stocks__title::after {
+    left: 0px;
+    top: 40px;
+  }
+  .stocks__packet {
+    margin-bottom: 100px;
+  }
+  .stocks__packet-title {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .stocks__header-1 .stocks__title-tab {
+    font-size: 12px;
+    line-height: 16px;
+    margin-right: 0px;
+  }
+  .stocks__tab-item {
+    max-width: 135px;
+  }
+  .stocks__tab > img {
+    margin-bottom: 60px;
+  }
+  .stocks__item-link {
+    margin-top: 20px;
+    display: block;
+    float: none;
+  }
+  .stocks__header-2 .stocks__title-tab {
+    margin-right: 15px;
+  }
+  .stocks__header-3 {
+    padding-right: 65px;
+  }
+  .stocks__pack-3 {
+    margin-bottom: 0;
+  }
+  .stocks__additional {
+    margin-top: 100px;
+    padding: 17px 22px;
+  }
+  .stocks__additional::after {
+    right: -15px;
+    padding: 4px 10px;
+  }
+  .stocks__aservices-title {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .stocks__aservices-subtitle {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .stocks__aservices-card-title {
+    font-size: 16px;
+    line-height: 18px;
+    height: 80px;
+    max-width: 215px;
+  }
+  .stocks__aservices-card-descr {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .stocks__aservices-card:hover.card-one .btn__more,
+  .stocks__aservices-card:hover.card-two .btn__more,
+  .stocks__aservices-card:hover.card-three .btn__more {
+    max-width: 100%;
+  }
+  .services {
+    padding-top: 100px;
+  }
+  .services__title::after {
+    left: 0px;
+    top: 40px;
+  }
+  .services__text {
+    padding-bottom: 45px;
+  }
+  .services__item-text {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  input[type=checkbox]:checked ~ .services__item-inner {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .services__wrapper-text {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .services__wrapper-text p {
+    display: inline-block;
+    max-width: 182px;
+  }
+  .services__wrapper-cost {
+    margin-top: 15px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .services__item-title {
+    font-size: 12px;
+    line-height: 22px;
+    max-width: 185px;
+  }
+  .services__wrapper-subtitle {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .services__extension-item {
+    margin-right: 0;
+    margin-bottom: 20px;
+    max-width: 100%;
+    line-height: 16px;
+    font-size: 12px;
+  }
+  .why {
+    padding-top: 100px;
+    margin-bottom: 100px;
+  }
+  .why__title::after {
+    left: 0px;
+    top: 40px;
+  }
+  .why__inner {
+    margin-top: 50px;
+  }
+  .why__top {
+    margin-right: 0;
+    max-width: 100%;
+    margin-bottom: 250px;
+  }
+  .why__top-img {
+    top: 15%;
+    width: 100%;
+  }
+  .why__text {
+    width: 100%;
+  }
+  .why__center-img {
+    width: 100%;
+  }
+  .why__bottom-img {
+    top: 105%;
+    width: 100%;
+  }
+  .questions {
+    padding-top: 100px;
+  }
+  .questions__title::after {
+    left: 0px;
+    top: 40px;
+  }
+  .questions__items {
+    margin-top: 40px;
+  }
+  .questions__item-title {
+    font-size: 14px;
+    line-height: 22px;
+    max-width: 230px;
+  }
+  .questions__item-text {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .footer__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-height: 315px;
+  }
+  .footer__link {
+    font-size: 13px;
+    line-height: 16px;
+  }
+  .footer__text {
+    font-size: 13px;
+    line-height: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  body {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+  }
+  .container {
+    padding: 0px 25px;
+  }
+  .header .contacts {
+    display: none;
   }
 }
