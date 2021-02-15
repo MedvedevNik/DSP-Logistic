@@ -807,26 +807,59 @@
       <div class="popup__close">
         <img src="img/close.svg" alt="modal-close">
       </div>
-      <h2 class="popup__title">Форма связи</h2>
-      <p class="popup__description">
-        Заполните форму обратной связи и мы вам перезвоним в течении 30 минут.
-      </p>
-      <form action="telegram.php" method="POST" class="popup__form" id="form" name="user_form">
-        <input type="text" class="popup__name popup__input" id="form-name" name="user_fio" placeholder="ФИО" required />
-        <input type="tel" class="popup__phone popup__input" id="form-phone" name="user_phone"
-          placeholder="+7(___)___-__-__" required />
-        <input type="email" class="popup__email popup__input" id="form-email" name="user_email" placeholder="E-mail"
-          required />
-        <textarea class="popup__mess popup__textarea" id="form2-message" name="user_message"
-          placeholder="Опишите свой заказ"></textarea>
-        <div class="popup__text">
-          <p class="popup__form-text">
-            Нажимая на кнопку, вы подтверждаете согласие на обработку ваших
-            данных.
-          </p>
+      <div class="order__content">
+        <h2 class="popup__title">Форма связи</h2>
+        <p class="popup__description">
+          Заполните форму обратной связи и мы вам перезвоним в течении 30 минут.
+        </p>
+        <form class="popup__form" id="form" name="user_form">
+          <div class="popup__form-body">
+            <label class="popup__label" for="form-name">Ф.И.О заказчика</label>
+          <input type="text" class="popup__name popup__input" id="form-name" name="user_fio" placeholder="Введите Ф.И.О." required />
+          <label class="popup__label" for="form-phone">Телефон</label>
+          <input type="tel" class="popup__phone popup__input" id="form-phone" name="user_phone"
+            placeholder="+7(___)___-__-__" required />
+          <label class="popup__label" for="exec_data">Дата выполнения заказа </label>
+          <input type="date" class="popup__input" id="exec_date" name="exec_date" required />
+          <label class="popup__label" for="adress_start">Адрес погрузки</label>
+          <input id="adress_start" name="adress_start" type="text" class="popup__input" 
+            placeholder="Введите адрес погрузки" required />
+          <label class="popup__label" for="adress_end">Адрес разгрузки</label>
+          <input id="adress_finish" name="adress_end" type="text" class="popup__input"
+            placeholder="Введите адрес разгрузки" required />
+          <label class="popup__label" for="form2-message">Описание груза</label>
+          <textarea class="popup__mess popup__textarea" id="form2-message" name="user_message"
+          rows: "4" placeholder="Добавьте описание груза"></textarea>
+          </div>
+          <!-- /.popup__form-body -->          
+          <div class="popup__text">
+            <p class="popup__form-text">
+              Нажимая на кнопку, вы подтверждаете согласие на обработку ваших
+              данных.
+            </p>
+          </div>
+          <button class="btn popup__form-btn" type="submit">Оставить заявку!</button>
+        </form>
+      </div>
+      <!-- /.order__content -->
+      
+      <div class="loader">
+        <div id="floatingBarsG">
+          <div class="blockG" id="rotateG_01"></div>
+          <div class="blockG" id="rotateG_02"></div>
+          <div class="blockG" id="rotateG_03"></div>
+          <div class="blockG" id="rotateG_04"></div>
+          <div class="blockG" id="rotateG_05"></div>
+          <div class="blockG" id="rotateG_06"></div>
+          <div class="blockG" id="rotateG_07"></div>
+          <div class="blockG" id="rotateG_08"></div>
         </div>
-        <button class="btn popup__form-btn" type="submit">Оставить заявку!</button>
-      </form>
+      </div>
+      <div class="message">
+        <h1 class="message__text"></h1>
+        <button class="btn popup__form-btn message__btn" type="button">Закрыть</button>
+        </form>
+      </div>
     </div>
   </div>
 

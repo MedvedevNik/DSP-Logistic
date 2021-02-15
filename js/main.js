@@ -110,6 +110,11 @@ window.addEventListener('DOMContentLoaded', () => {
         target.value = target.value.replace(/[^А-Яёа-яё ]/gi, '');
       }
 
+      if (target.name === 'adress_start' || target.name === 'adress_end') {
+        target.setAttribute('pattern', '[аА-яЯЁё0-9 .,-]');
+        target.value = target.value.replace(/[^а-я0-9\s.,-]/gi, '');
+      }
+
       if (target.matches('.popup__mess')) {
         target.value = target.value.replace(/[^А-ЯЁа-яё ,.?!]/gi, '');
       }
@@ -162,8 +167,20 @@ window.addEventListener('DOMContentLoaded', () => {
     document.querySelector('html').addEventListener('click', handleHTMLclick);
   }
 
+  const addZero = num => num > 10 ? `${num}` : `0${num}`; 
+
   const sendForm = (selector) => {
     const form = document.querySelector(selector);
+    const popup = form.closest('#popup');
+    const loader = popup.querySelector('.loader');
+    const statusMsg = popup.querySelector('.message');
+    const orderContent = popup.querySelector('.order__content');
+    const now = new Date();
+    const startDate =`${addZero(now.getFullYear())}-${addZero(now.getMonth() + 1)}-${addZero(now.getDate())}`;
+    let closeTimer = 0;
+
+    form['exec_date'].value = form['exec_date'].min = startDate;
+
     const postData = data => fetch('./telegram.php', {
         method: 'POST',
         headers: {
@@ -174,7 +191,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const handlSubmit = e => {
         e.preventDefault();
-        // statusMsg.classList.add('active');
+        orderContent.classList.add('hidden');
+        loader.classList.add('active');
 
         const formData = new FormData(form);        
         const temp = [];
@@ -186,20 +204,34 @@ window.addEventListener('DOMContentLoaded', () => {
 
         postData(body)
             .then(response => {
-                // statusMsg.classList.remove('active');
-                if (response.status !== 200) { throw new Error('status network not 200'); }
-                console.log(response);
+              loader.classList.remove('active');
+              if (response.status !== 200) { throw new Error('status network not 200'); }
+              statusMsg.children[0].textContent = `Спасибо за заказ!<br>Скоро мы с Вами свяжемся`
+              statusMsg.classList.add('active');
             })
             .catch(error => {
+                statusMsg.children[0].textContent = 'Что-то пошло не так...'
+                statusMsg.classList.add('active');
                 console.warn(error);
             })
             .finally(() => {
                 form.reset();
-                // statusMsg.classList.remove('active');
+                closeTimer = setTimeout(() => {
+                  popup.style.display = 'none';
+                  statusMsg.classList.remove('active');
+                  orderContent.classList.remove('hidden');
+                }, 6000);                
             });
     }; // end submitHandler
 
     form.addEventListener('submit', handlSubmit);
+    statusMsg.addEventListener('click', () => {
+      clearTimeout(closeTimer);
+      popup.style.display = 'none';
+      popup.style.display = 'none';
+      statusMsg.classList.remove('active');
+      orderContent.classList.remove('hidden');
+    });
 };
 
 const toggleMenu = () => {
