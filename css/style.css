@@ -1485,10 +1485,6 @@ input[type=checkbox]:checked ~ .questions__item-inner {
   cursor: pointer;
 }
 
-.overflowHidden {
-  overflow-y: hidden;
-}
-
 .active-menu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1988,6 +1984,26 @@ input[type=checkbox]:checked ~ .questions__item-inner {
     line-height: 20px;
     max-width: 450px;
   }
+  .popup__content {
+    top: 3%;
+    padding: 25px 60px 93px;
+    left: 40%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-30%);
+  }
+  .popup__description {
+    margin-bottom: 30px;
+  }
+  .popup__form-body {
+    height: 310px;
+  }
+  .popup__text {
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+  .popup__form-btn {
+    width: 100%;
+  }
 }
 
 @media (max-width: 750px) {
@@ -2262,10 +2278,26 @@ input[type=checkbox]:checked ~ .questions__item-inner {
   .popup__content {
     width: 80%;
     padding: 40px 64px 47px;
+    top: 3%;
+    left: 32%;
   }
   .popup__form-btn {
     padding: 16px 28px;
     width: 100%;
+  }
+  .popup__form-body {
+    height: 300px;
+  }
+  .popup .message {
+    top: 30%;
+    left: 10%;
+    line-height: 35px;
+    padding: 0 20px;
+  }
+  .nav-mobile__list-item {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
   }
 }
 
@@ -2273,6 +2305,7 @@ input[type=checkbox]:checked ~ .questions__item-inner {
   .popup__title {
     font-size: 22px;
     line-height: 22px;
+    margin-bottom: 20px;
   }
   .popup__title::after {
     top: 30px;
@@ -2280,10 +2313,37 @@ input[type=checkbox]:checked ~ .questions__item-inner {
   .popup__description {
     font-size: 14px;
     line-height: 16px;
+    margin-bottom: 20px;
+  }
+  .popup__form-body {
+    height: 380px;
+  }
+  .popup__text {
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
   .popup__content {
-    width: 70%;
-    padding: 40px 32px 24px;
+    width: 94%;
+    padding: 40px 32px 75px;
+    top: 2%;
+  }
+  .popup__close {
+    width: 25px;
+    height: 25px;
+    top: 20px;
+    right: 20px;
+  }
+  .popup__form-btn {
+    padding: 14px 28px;
+  }
+  .popup__close img {
+    width: 85%;
+  }
+  .popup .message {
+    top: 30%;
+    left: 2%;
+    line-height: 35px;
+    padding: 0 20px;
   }
 }
 
@@ -2304,22 +2364,33 @@ input[type=checkbox]:checked ~ .questions__item-inner {
     line-height: 22px;
   }
   .popup__title::after {
-    top: 45px;
+    top: 25px;
   }
   .popup__description {
     font-size: 14px;
     line-height: 14px;
   }
   .popup__content {
-    width: 70%;
+    width: 85%;
     padding: 50px 32px 24px;
+    left: 35%;
   }
   .popup__form-body {
     padding: 0;
+    height: 330px;
   }
   .popup__form-btn {
     padding: 16px 18px;
     width: 100%;
+  }
+  .popup .message {
+    top: 30%;
+    left: 2%;
+    line-height: 35px;
+    padding: 0 20px;
+  }
+  .popup .message__text {
+    font-size: 18px;
   }
 }
 

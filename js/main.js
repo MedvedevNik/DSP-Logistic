@@ -243,7 +243,11 @@ const toggleMenu = () => {
 
     const activeMenu = () => {
       menu.classList.toggle('active-menu');
-      document.body.classList.toggle('overflowHidden');
+      if(menu.classList.contains('active-menu')) {
+        document.body.style.overflowY = 'hidden';
+      } else {
+        document.body.style.overflowY = 'overlay';
+      }
     };
 
     if (target.closest('.menu') || (!target.closest('nav.nav-mobile') && menu.classList.contains('active-menu'))) {
