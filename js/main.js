@@ -51,29 +51,34 @@ window.addEventListener('DOMContentLoaded', () => {
   const togglePopup = () => {
     const popUp = document.getElementById('popup');
     const popupForm = popUp.querySelector('#form');
+    const formBody = popup.querySelector('.popup__form-body');
     const now = new Date();
     const startDate =`${addZero(now.getFullYear())}-${addZero(now.getMonth() + 1)}-${addZero(now.getDate())}`;
 
-    form['exec_date'].value = form['exec_date'].min = startDate;
-    popUp.style.display = 'block';
+    const closeForm = () => {
+      popUp.style.display = 'none';
+      popupForm.reset();
+      document.body.style.overflowY = 'overlay';
+    }
 
     const handleClick = e => {
       let { target } = e;
   
       if (target.closest('.popup__close')) {
-        popUp.style.display = 'none';
-        popupForm.reset();
-        document.body.style.overflowY = 'overlay';
+        closeForm();
       } else {
         target = target.closest('.popup__content');
   
         if (!target) {
-          popUp.style.display = 'none';
-          popupForm.reset();
-          document.body.style.overflowY = 'overlay';
+          closeForm();
         }
       }
     }
+
+    form['exec_date'].value = form['exec_date'].min = startDate;
+    popUp.style.display = 'block';
+    formBody.scrollTop = 0;
+
     popUp.addEventListener('click', handleClick);
   };
 

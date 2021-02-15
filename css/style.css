@@ -1272,7 +1272,7 @@ input[type=checkbox]:checked ~ .questions__item-inner {
 .popup__form-body {
   height: 400px;
   overflow-y: auto;
-  padding: 0 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .popup__input {
