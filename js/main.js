@@ -1,6 +1,8 @@
-'use strict';
-  
 window.addEventListener('DOMContentLoaded', () => {
+
+  'use strict';
+
+  const addZero = num => num > 10 ? `${num}` : `0${num}`;
 
   const anchors = document.querySelectorAll('.anchor');
   for (let anchor of anchors) {
@@ -49,6 +51,10 @@ window.addEventListener('DOMContentLoaded', () => {
   const togglePopup = () => {
     const popUp = document.getElementById('popup');
     const popupForm = popUp.querySelector('#form');
+    const now = new Date();
+    const startDate =`${addZero(now.getFullYear())}-${addZero(now.getMonth() + 1)}-${addZero(now.getDate())}`;
+
+    form['exec_date'].value = form['exec_date'].min = startDate;
     popUp.style.display = 'block';
 
     const handleClick = e => {
@@ -160,9 +166,7 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     } // end handleHTMLclick
     document.querySelector('html').addEventListener('click', handleHTMLclick);
-  }
-
-  const addZero = num => num > 10 ? `${num}` : `0${num}`; 
+  } 
 
   const sendForm = (selector) => {
     const form = document.querySelector(selector);
@@ -170,11 +174,16 @@ window.addEventListener('DOMContentLoaded', () => {
     const loader = popup.querySelector('.loader');
     const statusMsg = popup.querySelector('.message');
     const orderContent = popup.querySelector('.order__content');
-    const now = new Date();
-    const startDate =`${addZero(now.getFullYear())}-${addZero(now.getMonth() + 1)}-${addZero(now.getDate())}`;
+
     let closeTimer = 0;
 
-    form['exec_date'].value = form['exec_date'].min = startDate;
+    const closeForm = () => {
+      popup.style.display = 'none';
+      form.reset();
+      statusMsg.classList.remove('active');
+      orderContent.classList.remove('hidden');
+      document.body.style.overflowY = 'overlay';
+    }; // end closeForm
 
     const postData = data => fetch('./telegram.php', {
         method: 'POST',
@@ -210,22 +219,14 @@ window.addEventListener('DOMContentLoaded', () => {
                 console.warn(error);
             })
             .finally(() => {
-                form.reset();
-                closeTimer = setTimeout(() => {
-                  popup.style.display = 'none';
-                  statusMsg.classList.remove('active');
-                  orderContent.classList.remove('hidden');
-                }, 6000);                
+                closeTimer = setTimeout(closeForm, 6000);                
             });
     }; // end submitHandler
 
     form.addEventListener('submit', handlSubmit);
     statusMsg.addEventListener('click', () => {
       clearTimeout(closeTimer);
-      popup.style.display = 'none';
-      popup.style.display = 'none';
-      statusMsg.classList.remove('active');
-      orderContent.classList.remove('hidden');
+      closeForm();
     });
 };
 
