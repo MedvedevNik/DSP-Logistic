@@ -99,11 +99,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector(selector);
     form.addEventListener('input', e => {
       const { target } = e;
-      if (target.matches('.popup__email')) {
-        target.value = target.value.replace(/[^A-Za-z ,.@0-9]/gi, '');
-        target.setAttribute('pattern', '[A-Za-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$');
-      }
-
       if (target.name === 'user_name') {
         target.setAttribute('pattern', '[А-ЯЁ]{1}[а-яё]{1,49}');
         target.setAttribute('maxlength', 50);
@@ -111,12 +106,12 @@ window.addEventListener('DOMContentLoaded', () => {
       }
 
       if (target.name === 'adress_start' || target.name === 'adress_end') {
-        target.setAttribute('pattern', '[аА-яЯЁё0-9 .,-]');
-        target.value = target.value.replace(/[^а-я0-9\s.,-]/gi, '');
+        target.setAttribute('pattern', '[аА-яЯЁё0-9 .,-]{1,100}');
+        target.value = target.value.replace(/[^а-яёА-ЯЁ0-9 .,-]/gi, '');
       }
 
       if (target.matches('.popup__mess')) {
-        target.value = target.value.replace(/[^А-ЯЁа-яё ,.?!]/gi, '');
+        target.value = target.value.replace(/[^А-ЯЁа-яё0-9 ,.?!]/gi, '');
       }
     });
   };

@@ -1155,6 +1155,7 @@ a:focus {
     color: #C1C1C1;
 
     max-width: 429px;
+    margin-top: 20px;
     margin-bottom: 30px;
   }
   
@@ -1191,14 +1192,14 @@ a:focus {
   
   &__content {
     position: fixed;
-    top: 7%;
+    top: 4%;
     left: 50%;
     transform: translateX(-50%);
     max-width: 750px;
     z-index: 99;
     background: rgb(255, 255, 255);
     padding: 80px 128px 93px;
-    max-height: 90vh;
+    max-height: 96vh;
   }
 
   .order__content {
@@ -1599,6 +1600,17 @@ a:focus {
   .footer {
     &__wrapper {
       margin: 0;
+    }
+  }
+
+  .popup {
+    &__title {
+      font-size: 34px;
+      line-height: 40px;
+    }
+    &__title::after {
+      top: 50px;
+      left: 0;
     }
   }
 }
@@ -2105,6 +2117,41 @@ a:focus {
       line-height: 16px;
     }
   }
+
+  .popup {
+    &__title {
+      font-size: 26px;
+      line-height: 28px;
+    }
+    &__content {
+      width: 80%;
+      padding: 40px 64px 47px;
+    }
+    &__form-btn {
+      padding: 16px 28px;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .popup {
+    &__title {
+      font-size: 22px;
+      line-height: 22px;
+    }
+    &__title::after {
+      top: 30px;
+    }
+    &__description {
+      font-size: 14px;
+      line-height: 16px;
+    }
+    &__content {
+      width: 70%;
+      padding: 40px 32px 24px;
+    }
+  }
 }
 
 @media (max-width: 360px) {
@@ -2121,6 +2168,30 @@ a:focus {
   .header {
     .contacts {
       display: none;
+    }
+  }
+  .popup {
+    &__title {
+      font-size: 22px;
+      line-height: 22px;
+    }
+    &__title::after {
+      top: 45px;
+    }
+    &__description {
+      font-size: 14px;
+      line-height: 14px;
+    }
+    &__content {
+      width: 70%;
+      padding: 50px 32px 24px;
+    }
+    &__form-body {
+      padding: 0;
+    }
+    &__form-btn {
+      padding: 16px 18px;
+      width: 100%;
     }
   }
 }
@@ -2143,6 +2214,8 @@ a:focus {
   &.active {
     display: block;
   }
+
+  
 }
 
 .loader {
