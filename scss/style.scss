@@ -167,9 +167,9 @@ a:focus {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  min-height: 990px;
+  min-height: 890px;
   &__inner {
-    padding-top: 310px;
+    padding-top: 370px;
     text-align: left;
   }
   &__title {
@@ -257,7 +257,6 @@ a:focus {
 
 .about {
   padding-top: 150px;
-  margin-bottom: 150px;
   &__inner {
     position: relative;
   }
@@ -329,7 +328,6 @@ a:focus {
 //stocks 
 .stocks {
   padding-top: 150px;
-  margin-bottom: 250px;
   &__title {
     font-weight: 800;
     font-size: 60px;
@@ -411,7 +409,7 @@ a:focus {
   &__additional {
     display: inline-block;
     position: relative;
-    margin-top: 185px;
+    margin-top: 60px;
     padding: 34px 63px;
     background: #272B2C;
     border: 2px solid #272B2C;
@@ -836,6 +834,7 @@ a:focus {
     float: right;
     font-size: 26px;
     color: #272B2C;
+    margin-top: -25px;
   }
   &__wrapper-text {
     padding-bottom: 10px;
@@ -1368,6 +1367,16 @@ a:focus {
     line-height: 70px;
   }
 
+  .header {
+    .contacts {
+      .contact {
+        &__phone {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
   .nav {
     &__list-link {
       font-size: 14px;
@@ -1381,11 +1390,6 @@ a:focus {
     }
   }
 
-  .contact {
-    &__phone {
-      font-size: 18px;
-    }
-  }
 
   .about{
     &__top &__text {

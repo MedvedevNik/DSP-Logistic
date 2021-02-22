@@ -189,11 +189,11 @@ a:focus {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  min-height: 990px;
+  min-height: 890px;
 }
 
 .main__inner {
-  padding-top: 310px;
+  padding-top: 370px;
   text-align: left;
 }
 
@@ -282,7 +282,6 @@ a:focus {
 
 .about {
   padding-top: 150px;
-  margin-bottom: 150px;
 }
 
 .about__inner {
@@ -363,7 +362,6 @@ a:focus {
 
 .stocks {
   padding-top: 150px;
-  margin-bottom: 250px;
 }
 
 .stocks__title {
@@ -465,7 +463,7 @@ a:focus {
 .stocks__additional {
   display: inline-block;
   position: relative;
-  margin-top: 185px;
+  margin-top: 60px;
   padding: 34px 63px;
   background: #272B2C;
   border: 2px solid #272B2C;
@@ -953,6 +951,7 @@ input[type=checkbox]:checked ~ .services__last {
   float: right;
   font-size: 26px;
   color: #272B2C;
+  margin-top: -25px;
 }
 
 .services__wrapper-text {
@@ -1525,6 +1524,9 @@ input[type=checkbox]:checked ~ .questions__item-inner {
     font-size: 50px;
     line-height: 70px;
   }
+  .header .contacts .contact__phone {
+    font-size: 18px;
+  }
   .nav__list-link {
     font-size: 14px;
   }
@@ -1533,9 +1535,6 @@ input[type=checkbox]:checked ~ .questions__item-inner {
   }
   .social__links:first-child {
     margin-right: 15px;
-  }
-  .contact__phone {
-    font-size: 18px;
   }
   .about__top .about__text {
     padding-top: 0;
