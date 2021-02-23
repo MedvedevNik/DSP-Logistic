@@ -407,7 +407,6 @@ a:focus {
       -ms-flex-direction: row;
           flex-direction: row;
   max-width: 900px;
-  min-height: 617px;
 }
 
 .stocks__header {
@@ -488,7 +487,7 @@ a:focus {
 
 .stocks__tab-text {
   color: #2F2F2F;
-  margin-bottom: 27px;
+  margin-bottom: 0;
   height: 150px;
 }
 
@@ -820,6 +819,10 @@ input[type=checkbox]:checked ~ .services__last {
 .services ul li:nth-of-type(3) {
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
+}
+
+.services__item:nth-child(3) .services__wrapper:first-child {
+  margin-top: 0px;
 }
 
 .services__item i {
@@ -1554,6 +1557,10 @@ input[type=checkbox]:checked ~ .questions__item-inner {
   .stocks__packet-tab {
     left: 20%;
   }
+  .stocks__pack-2 .stocks__tab-text,
+  .stocks__pack-3 .stocks__tab-text {
+    height: 115px;
+  }
   .stocks__aservices-card {
     height: 540px;
     padding-left: 15px;
@@ -1721,7 +1728,12 @@ input[type=checkbox]:checked ~ .questions__item-inner {
   }
   .why__top-img {
     top: 12%;
-    width: 70%;
+    width: 40%;
+    height: 380px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: left bottom;
+       object-position: left bottom;
   }
   .why__text {
     padding: 0;
@@ -1733,7 +1745,12 @@ input[type=checkbox]:checked ~ .questions__item-inner {
   }
   .why__center-img {
     position: relative;
-    width: 80%;
+    width: 70%;
+    height: 380px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: bottom;
+       object-position: bottom;
   }
   .why__bottom {
     position: relative;
@@ -1889,6 +1906,9 @@ input[type=checkbox]:checked ~ .questions__item-inner {
   }
   .stocks__header-3 .stocks__title-tab:nth-child(even) {
     margin-bottom: 0;
+  }
+  .stocks__tab-text {
+    height: 100px;
   }
   .stocks__aservices-cards {
     -ms-flex-wrap: wrap;
@@ -2126,6 +2146,9 @@ input[type=checkbox]:checked ~ .questions__item-inner {
   .stocks__pack-3 {
     margin-bottom: 0;
   }
+  .stocks__pack-3 .stocks__tab-text {
+    height: 100px;
+  }
   .stocks__additional {
     margin-top: 100px;
     padding: 17px 22px;
@@ -2159,6 +2182,9 @@ input[type=checkbox]:checked ~ .questions__item-inner {
   }
   .services {
     padding-top: 100px;
+  }
+  .services__item:nth-child(3) .services__wrapper:first-child .services__wrapper-cost {
+    margin-top: 0px;
   }
   .services__title::after {
     left: 0px;
@@ -2299,6 +2325,25 @@ input[type=checkbox]:checked ~ .questions__item-inner {
 }
 
 @media (max-width: 425px) {
+  .container {
+    padding: 0 35px;
+  }
+  .header .contacts .contact_img {
+    width: 20px;
+  }
+  .header .contacts .contact__phone {
+    font-size: 12px;
+    line-height: 12px;
+  }
+  .services__item:nth-child(3) .services__wrapper:first-child .services__wrapper-cost {
+    margin-top: 0px;
+  }
+  .up {
+    bottom: 10px;
+    right: 5px;
+    width: 45px;
+    height: 45px;
+  }
   .popup__title {
     font-size: 22px;
     line-height: 22px;
@@ -2344,7 +2389,7 @@ input[type=checkbox]:checked ~ .questions__item-inner {
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 370px) {
   body {
     font-size: 12px;
     font-weight: 400;
@@ -2355,6 +2400,34 @@ input[type=checkbox]:checked ~ .questions__item-inner {
   }
   .header .contacts {
     display: none;
+  }
+  .stocks__tab-item {
+    max-width: 128px;
+  }
+  .stocks__additional {
+    margin-top: 20px;
+  }
+  .stocks__pack-2 .stocks__tab-text {
+    height: 140px;
+  }
+  .stocks__pack-3 .stocks__tab-text {
+    height: 100px;
+  }
+  .stocks__packet {
+    margin-bottom: 50px;
+  }
+  .services__item:nth-child(3) .services__wrapper:first-child .services__wrapper-cost {
+    margin-top: 0px;
+  }
+  .why__top {
+    margin-bottom: 200px;
+  }
+  .why__center-img {
+    height: 280px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: bottom;
+       object-position: bottom;
   }
   .popup__title {
     font-size: 22px;
@@ -2379,6 +2452,9 @@ input[type=checkbox]:checked ~ .questions__item-inner {
   .popup__form-btn {
     padding: 16px 18px;
     width: 100%;
+  }
+  .popup__input-date::before {
+    top: 12px;
   }
   .popup .message {
     top: 30%;
