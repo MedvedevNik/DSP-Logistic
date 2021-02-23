@@ -1099,9 +1099,32 @@ a:focus {
     margin-bottom: 10px;
   }
   &__author {
-    height: 88px;
     background-color: #2B2B2B;
   }
+  &__author-inner {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 20px;
+  }
+  &__author-link {
+    margin-right: 70px;
+  }
+  &__author-wrapper {
+    display: inline-block;
+  }
+  &__author-img {
+    margin-right: 15px;
+  }
+  &__author-name {
+    font-weight: bold;
+  }
+  &__author-descr {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  
 }
 
 .popup {
@@ -1865,6 +1888,38 @@ a:focus {
       font-size: 18px;
       line-height: 20px;
       max-width: 450px;
+    }
+  }
+
+  .footer {
+    &__author {
+
+      background-color: #2B2B2B;
+    }
+    &__author-inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      padding-top: 30px;
+      align-content: center;
+    }
+    &__author-link {
+      margin-bottom: 40px;
+      margin-right: 0;
+    }
+    &__author-wrapper {
+      display: inline-block;
+    }
+    &__author-img {
+      margin-right: 15px;
+    }
+    &__author-name {
+      font-weight: bold;
+    }
+    &__author-descr {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 17px;
     }
   }
 
