@@ -327,7 +327,6 @@ a:focus {
 
 //stocks 
 .stocks {
-  padding-top: 150px;
   &__title {
     font-weight: 800;
     font-size: 60px;
@@ -927,7 +926,6 @@ a:focus {
 }
 
 .questions {
-  padding-top: 150px;
   margin-bottom: 150px;
   &__title,
   &__description {
@@ -1609,45 +1607,18 @@ a:focus {
       font-size: 14px;
     }
   }
-  
+
   .why {
-    &__top {
-      max-width: 55%;
-      margin-left: 0;
-      margin-bottom: 500px;
-    }
-    &__top-img {
-      top: 12%;
-      width: 40%;
-      height: 380px;
+    &__img {
+      width: 50%;
+      height: 390px;
       object-fit: cover;
-      object-position: left bottom;
-    }
-    &__text {
-      padding: 0;
-      width: 81%;
-    }
-    &__center {
-      margin-left: 0;
-      margin-bottom: 10px;
+      object-position: bottom;
     }
     &__center-img {
-      position: relative;
-      width: 70%;
-      height: 380px;
-      object-fit: cover;
-      object-position: bottom;  
-    }
-    &__bottom {
-      position: relative;
-      margin-left: 0;
-      margin-right: 0;
-      margin-bottom: 400px;
-      max-width: 400px;
-    }
-    &__bottom-img {
-      top: 109%;
-      width: 110%;
+      height: 495px;
+      width: 33%;
+      top: 30px;
     }
   }
 
@@ -1876,15 +1847,47 @@ a:focus {
 
   .why {
     &__top {
-      margin-bottom: 325px;
+      max-width: 55%;
+      margin-left: 0;
+      margin-bottom: 425px;
+    }
+    &__img {
+      width: 100%;
+      object-position: left bottom;
+      object-fit: cover;
+      height: 380px;
+    }
+    &__top-img {
+      top: 13%;
+      width: 85%;
+    }
+    &__text {
+      padding: 0;
+      width: 81%;
+    }
+    &__center {
+      margin-left: 0;
+      margin-bottom: 40px;
+    }
+    &__center-img {
+      position: relative;
+      width: 70%;
     }
     &__bottom {
+      position: relative;
+      margin-left: 0;
+      margin-right: 0;
       margin-bottom: 250px;
+    }
+    &__bottom-img {
+      top: 109%;
+      width: 110%;
     }
   }
 
   .questions {
     margin-bottom: 150px;
+    padding-top: 200px;
     &__item-title {
       font-size: 18px;
       line-height: 20px;
@@ -2186,18 +2189,22 @@ a:focus {
     }
     &__top {
       margin-right: 0;
-      max-width: 100%;
-      margin-bottom: 250px;
+      max-width: 55%;
+      margin-bottom: 395px;
     }
     &__top-img {
-      top: 15%;
+      top: 10%;
       width: 100%;
     }
     &__text {
       width: 100%;
     }
+    &__center {
+      width: 55%;
+    }
     &__center-img {
       width: 100%;
+      height: 408px;
     }
     &__bottom-img {
       top: 105%;
@@ -2206,7 +2213,7 @@ a:focus {
   }
   
   .questions {
-    padding-top: 100px;
+    padding-top: 200px;
     &__title::after {
       left: 0px;
       top: 40px;
@@ -2302,6 +2309,21 @@ a:focus {
     right: 5px;
     width: 45px;
     height: 45px;
+  }
+
+  .why {
+    &__text {
+      max-width: 100%
+    }
+    &__top {
+      max-width: 100%;
+    }
+    &__top-img {
+      height: 30%;
+    }
+    &__center {
+      width: 100%;
+    }
   }
 
   .popup {
