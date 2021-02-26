@@ -215,11 +215,12 @@ window.addEventListener('DOMContentLoaded', () => {
             .then(response => {
               loader.classList.remove('active');
               if (response.status !== 200) { throw new Error('status network not 200'); }
-              statusMsg.children[0].textContent = `Спасибо за заказ!<br>Скоро мы с Вами свяжемся`
+              statusMsg.children[0].textContent = `Спасибо за заказ!
+              Скоро мы с Вами свяжемся`;
               statusMsg.classList.add('active');
             })
             .catch(error => {
-                statusMsg.children[0].textContent = 'Что-то пошло не так...'
+                statusMsg.children[0].textContent = 'Что-то пошло не так...';
                 statusMsg.classList.add('active');
                 console.warn(error);
             })
