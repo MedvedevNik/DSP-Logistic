@@ -1,5 +1,27 @@
 @import "vars";
 
+@font-face {
+  font-family : 'Montserrat';
+  font-style : normal;
+  font-weight : 500;
+  font-display : swap;
+  src : url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_ZpC7g4.ttf) format('truetype');
+}
+@font-face {
+  font-family : 'Montserrat';
+  font-style : normal;
+  font-weight : 700;
+  font-display : swap;
+  src : url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_dJE7g4.ttf) format('truetype');
+}
+@font-face {
+  font-family : 'Montserrat';
+  font-style : normal;
+  font-weight : 800;
+  font-display : swap;
+  src : url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_c5H7g4.ttf) format('truetype');
+}
+
 html {
   box-sizing: border-box;
   margin: 0;
@@ -128,6 +150,8 @@ a:focus {
       }
       &__links-img {
         margin-top: 11px;
+        max-width: 30px;
+        max-height: 30px;
       }
       &__links-img:hover {
         opacity: .5;
@@ -165,7 +189,7 @@ a:focus {
 
 
 .main {
-  background-image: url(../img/bg.webp);
+  background-image: url(./../img/bg.webp);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -198,7 +222,6 @@ a:focus {
     width: 207px;
     padding: 16px 26px;
     border-radius: 4px;
-    backdrop-filter: blur(4px);
 
     font-style: normal;
     font-weight: 600;
@@ -440,15 +463,13 @@ a:focus {
     display: inline-block;
   }
   &__item-link {
-    display: inline-block;
+    display: block;
     float: right;
     text-align: center;
     padding: 16px 62px;
     color: #fff;
     background-color: #69A4A2;
     border: 2px solid #69A4A2;
-    -webkit-backdrop-filter: blur(4px);
-    backdrop-filter: blur(4px);
     border-radius: 4px;
   }
   &__item-link:hover {
@@ -546,24 +567,17 @@ a:focus {
       }
 
       &.card-one {
-        background: #ffffff url(../img/aserv-1.webp) no-repeat center;
+        background: #ffffff url(./../img/aserv-1.webp) no-repeat center;
         background-size: cover;
         object-fit: cover;
-        flex-basis: 45.5%;
+        flex-basis: 50%;
       }
 
       &.card-two {
-        background: #ffffff url(../img/aserv-2.webp) no-repeat center;
+        background: #ffffff url(./../img/aserv-2.webp) no-repeat center;
         background-size: cover;
         object-fit: cover;
-        flex-basis: 24.5%;
-      }
-
-      &.card-three {
-        background: #ffffff url(../img/aserv-3.webp) no-repeat center;
-        background-size: cover;
-        object-fit: cover;
-        flex-basis: 24.5%;
+        flex-basis: 50%;
       }
 
 
@@ -598,8 +612,7 @@ a:focus {
         z-index: 3;
       }
 
-      &:hover.card-two .btn__more,
-      &:hover.card-three .btn__more{
+      &:hover.card-two .btn__more {
         margin-top: 62px;
       }
     }
@@ -704,7 +717,6 @@ a:focus {
     color: #fff;
     background-color: $accent;
     border: 2px solid $accent;
-    backdrop-filter: blur(4px);
     border-radius: 4px;
   }
   &__item-link:hover {
@@ -1229,8 +1241,6 @@ a:focus {
   &__form-btn {
     background: #69A4A2;
     border: 2px solid #69A4A2;
-    box-sizing: border-box;
-    backdrop-filter: blur(4px);
     border-radius: 4px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -1419,7 +1429,7 @@ a:focus {
       padding-left: 15px;
     }
     &__aservices-card.card-one {
-      flex-basis: 33.33%;
+      flex-basis: 50%;
     }
     &__aservices-card-title {
       line-height: 25px;
@@ -1433,19 +1443,14 @@ a:focus {
     &__aservices-card:hover.card-one  .btn__more {
       margin-top: 148px;
     }
-    &__aservices-card:hover.card-two  &__aservices-card-title,
-    &__aservices-card:hover.card-three  &__aservices-card-title{
+    &__aservices-card:hover.card-two  &__aservices-card-title{
       height: 140px;
     }
-    &__aservices-card:hover.card-two  .btn__more,
-    &__aservices-card:hover.card-three  .btn__more{
+    &__aservices-card:hover.card-two  .btn__more{
       margin-top: 148px;
     }
     &__aservices-card.card-two {
-      flex-basis: 33.33%;
-    }
-    &__aservices-card.card-three {
-      flex-basis: 33.33%;
+      flex-basis: 50%;
     }
   }
 
@@ -1753,19 +1758,16 @@ a:focus {
       height: 55px;
     }
     &__aservices-card:hover.card-one  &__aservices-card-title,
-    &__aservices-card:hover.card-two  &__aservices-card-title,
-    &__aservices-card:hover.card-three  &__aservices-card-title {
+    &__aservices-card:hover.card-two  &__aservices-card-title {
       height: 55px;
       width: 526px;
     }
     &__aservices-card:hover.card-one &__aservices-card-descr,
-    &__aservices-card:hover.card-two &__aservices-card-descr,
-    &__aservices-card:hover.card-three &__aservices-card-descr {
+    &__aservices-card:hover.card-two &__aservices-card-descr {
       margin-top: 40px;
     }
     &__aservices-card:hover.card-one .btn__more,
-    &__aservices-card:hover.card-two .btn__more,
-    &__aservices-card:hover.card-three .btn__more {
+    &__aservices-card:hover.card-two .btn__more {
       margin-top: 40px;
     }
     &__aservices-card.card-one {
@@ -1774,10 +1776,6 @@ a:focus {
     &__aservices-card.card-two {
       flex-basis: 100%;
     }
-    &__aservices-card.card-three {
-      flex-basis: 100%;
-    }
-
   }
 
   .services {
@@ -2093,8 +2091,7 @@ a:focus {
       line-height: 16px;
     }
     &__aservices-card:hover.card-one .btn__more, 
-    &__aservices-card:hover.card-two .btn__more, 
-    &__aservices-card:hover.card-three .btn__more {
+    &__aservices-card:hover.card-two .btn__more{
       max-width: 100%;
     }
   }

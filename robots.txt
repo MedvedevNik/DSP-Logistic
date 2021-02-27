@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: *
+Allow: /
+Host: perevozkagruzov24.su
+Sitemap: https://perevozkagruzov24.su/sitemap.xml
